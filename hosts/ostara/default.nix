@@ -36,7 +36,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-label/EFI";
+    { device = "/dev/disk/by-uuid/30F8-E32F";
       fsType = "vfat";
     };
 

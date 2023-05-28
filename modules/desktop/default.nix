@@ -1,5 +1,6 @@
 { lib, inputs, config, pkgs, modulesPath, ... }:
 {
+  services.pcscd.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -13,9 +14,16 @@
     polybar
     feh
     emacs
-    gnupg
     gopass
+    pinentry-gnome
+    mosh
   ];
+
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryFlavor = "gnome3";
+  };
 
   services.xserver = {
     enable = true;

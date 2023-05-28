@@ -1,12 +1,12 @@
-{ lib, inputs, config, pkgs, modulesPath, ... }:
+{ lib, inputs, config, nixpkgs, modulesPath, hardwareModules, ... }:
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    nixos-hardware.framework.12th-gen-intel
+    hardwareModules.framework-12th-gen-intel
   ];
   hardware.cpu.intel.updateMicrocode = true;
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "aesni_intel" "cryptd" ];
   boot.kernelModules = [
     "kvm-intel"
   ];
@@ -36,7 +36,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/30F8-E32F";
+    { device = "/dev/nvme0n1p1";
       fsType = "vfat";
     };
 

@@ -13,6 +13,7 @@
     polybar
     feh
     emacs
+    gnupg
   ];
 
   services.xserver = {

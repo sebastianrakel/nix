@@ -14,6 +14,7 @@
     feh
     emacs
     gnupg
+    gopass
   ];
 
   services.xserver = {

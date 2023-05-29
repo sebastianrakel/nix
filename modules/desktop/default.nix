@@ -6,7 +6,10 @@
     alsa.enable = true;
     pulse.enable = true;
   };
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
 
+  networking.firewall.enable = false;
   environment.systemPackages = with pkgs; [
     firefox
     alacritty
@@ -17,6 +20,11 @@
     gopass
     pinentry-gnome
     mosh
+    jetbrains.idea-ultimate
+    go
+    tdesktop
+    direnv
+    vscode
   ];
 
   programs.gnupg.agent = {

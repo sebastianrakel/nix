@@ -27,6 +27,7 @@
     vscode
     pcmanfm
     chromium
+    xscreensaver
   ];
 
   programs.gnupg.agent = {

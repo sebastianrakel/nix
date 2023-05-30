@@ -7,10 +7,15 @@
     ];
     initialize = true;
     passwordFile = "/home/sebastian/.restic-password";
+    repositoryFile = "/home/sebastian/.restic-repo";
     exclude = [
       "/home/*/.cache"
       "/home/*/.local/cache"
       "/home/*/.vagrant.d"
     ];
+    timerConfig = {
+      OnCalendar = "*:0,15,30,45";
+      RandomizedDelaySec = "30s";
+    };
   };
 }

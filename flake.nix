@@ -32,7 +32,7 @@
       ];
 
       hosts.sulu.modules = [
-        ./hosts/ostara
+        ./hosts/sulu
         ./modules/systemd-boot
         ./modules/desktop
         ./modules/vagrant

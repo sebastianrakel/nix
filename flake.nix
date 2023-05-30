@@ -36,6 +36,6 @@
         ./modules/systemd-boot
         ./modules/desktop
         ./modules/vagrant
-      ]
+      ];
     };
 }

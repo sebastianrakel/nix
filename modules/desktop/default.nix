@@ -39,7 +39,6 @@
       enable = true;
     };
     displayManager.startx.enable = true;
-    libinput.enable = true;
   };
 
   hardware.opengl = {

@@ -26,6 +26,8 @@
     emacs
     htop
     mtr
+    restic
+    unzip
   ];
 
   programs = {

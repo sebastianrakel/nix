@@ -25,6 +25,8 @@
     tdesktop
     direnv
     vscode
+    pcmanfm
+    chromium
   ];
 
   programs.gnupg.agent = {

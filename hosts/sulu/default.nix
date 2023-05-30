@@ -38,5 +38,7 @@
 
   swapDevices = [ { device = "/dev/disk/by-label/NIXSWAP"; } ];
 
+  services.restic.backups.${config.networking.hostName}.repository = "sftp:srakel@data.bridge.service-erp.de:Backups/${config.networking.hostName}";
+
   system.stateVersion = "22.11";
 }

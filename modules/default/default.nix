@@ -28,6 +28,7 @@
     mtr
     restic
     unzip
+    tmux
   ];
 
   programs = {

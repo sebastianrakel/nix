@@ -46,6 +46,7 @@
         ./modules/desktop
         ./modules/vagrant
         ./modules/backup
+        ./modules/luks-ssh
       ];
     };
 }

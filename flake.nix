@@ -39,5 +39,14 @@
         ./modules/backup
         ./modules/luks-ssh
       ];
+
+      hosts.odin.modules = [
+        ./hosts/odin
+        ./modules/systemd-boot
+        ./modules/desktop
+        ./modules/vagrant
+        ./modules/backup
+        ./modules/luks-ssh
+      ];
     };
 }

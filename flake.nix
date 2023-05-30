@@ -30,5 +30,12 @@
         ./modules/desktop
         ./modules/vagrant
       ];
+
+      hosts.sulu.modules = [
+        ./hosts/ostara
+        ./modules/systemd-boot
+        ./modules/desktop
+        ./modules/vagrant
+      ]
     };
 }

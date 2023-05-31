@@ -39,6 +39,7 @@
         ./modules/backup
         ./modules/luks-ssh
         ./modules/podman
+        ./modules/printing
       ];
 
       hosts.odin.modules = [

@@ -1,4 +1,4 @@
-{ lib, inputs, config, nixpkgs, modulesPath, hardwareModules, ... }:
+{ lib, inputs, config, pkgs, modulesPath, hardwareModules, ... }:
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -22,6 +22,7 @@
 
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+    cups-kyodialog3 = pkgs.cups-kyodialog3.override { region = "EU"; };
   };
 
   fileSystems."/" =

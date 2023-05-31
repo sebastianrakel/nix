@@ -18,6 +18,7 @@
     feh
     emacs
     gopass
+    gopass-jsonapi
     pinentry-gnome
     mosh
     jetbrains.idea-ultimate

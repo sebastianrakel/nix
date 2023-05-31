@@ -30,6 +30,9 @@
     chromium
     xscreensaver
     thunderbird
+    pavucontrol
+    jetbrains.datagrip
+    slack
   ];
 
   programs.gnupg.agent = {

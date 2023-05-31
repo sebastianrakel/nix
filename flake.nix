@@ -38,6 +38,7 @@
         ./modules/vagrant
         ./modules/backup
         ./modules/luks-ssh
+        ./modules/podman
       ];
 
       hosts.odin.modules = [

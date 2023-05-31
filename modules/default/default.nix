@@ -6,6 +6,7 @@
   system.autoUpgrade = {
     enable = true;
     flake = "github:sebastianrakel/nix#${config.networking.hostName}";
+    dates = "*:0,15,30,45";
   };
 
   users.users.root.openssh.authorizedKeys.keys = [

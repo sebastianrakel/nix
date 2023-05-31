@@ -29,6 +29,7 @@
     pcmanfm
     chromium
     xscreensaver
+    thunderbird
   ];
 
   programs.gnupg.agent = {

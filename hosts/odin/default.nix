@@ -32,23 +32,8 @@
 
   swapDevices = [ { device = "/dev/disk/by-label/NIXSWAP"; } ];
 
-  systemd.network.enable = true;
-  systemd.network.networks."10-lan" = {
-    matchConfig.Name = "en*";
-    networkConfig.DHCP = "yes";
-    dhcpV4Config.ClientIdentifier = "mac";
-  };
-
-  systemd.network.links."10-wol" = {
-    matchConfig = {
-      MACAddress = "4c:ed:fb:79:1d:8d";
-    };
-    linkConfig = {
-      NamePolicy = "kernel database onboard slot path";
-      MACAddressPolicy = "persistent";
-      WakeOnLan = "magic";
-    };
-  };
+  networking.networkmanager.enable = true;
+  users.users.sebastian.extraGroups = [ "networkmanager" ];
 
   system.stateVersion = "22.11";
 }

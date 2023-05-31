@@ -33,6 +33,7 @@
     pavucontrol
     jetbrains.datagrip
     slack
+    flameshot
   ];
 
   programs.gnupg.agent = {

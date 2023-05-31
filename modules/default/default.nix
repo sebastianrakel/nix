@@ -5,7 +5,7 @@
 
   system.autoUpgrade = {
     enable = true;
-    flake = "github:sebastianrakel/nix#${config.networking.hostName}";
+    flake = "github:sebastianrakel/nix";
     dates = "*:0,15,30,45";
   };
 

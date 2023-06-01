@@ -34,6 +34,7 @@
     jetbrains.datagrip
     slack
     flameshot
+    exfat
   ];
 
   programs.gnupg.agent = {

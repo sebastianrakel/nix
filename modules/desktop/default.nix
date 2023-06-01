@@ -35,6 +35,7 @@
     slack
     flameshot
     exfat
+    remmina
   ];
 
   programs.gnupg.agent = {

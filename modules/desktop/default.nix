@@ -36,6 +36,7 @@
     flameshot
     exfat
     remmina
+    gajim
   ];
 
   programs.gnupg.agent = {

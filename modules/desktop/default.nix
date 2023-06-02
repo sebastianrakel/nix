@@ -37,6 +37,8 @@
     exfat
     remmina
     gajim
+    arc-theme
+    arc-icon-theme
   ];
 
   programs.gnupg.agent = {

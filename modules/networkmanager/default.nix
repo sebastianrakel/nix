@@ -4,6 +4,6 @@
   users.users.sebastian.extraGroups = [ "networkmanager" ];
 
   environment.systemPackages = with pkgs; [
-    nm-applet
+    networkmanagerapplet
   ];
 }

@@ -31,6 +31,7 @@
     restic
     unzip
     tmux
+    wireguard-tools
   ];
 
   programs = {

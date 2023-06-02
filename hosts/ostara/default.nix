@@ -19,10 +19,6 @@
   };
 
   networking.hostName = "ostara";
-  networking.useNetworkd = false;
-  networking.networkmanager = {
-    enable = true;
-  };
 
   services.xserver.videoDrivers = [ "modesetting" ];
   services.xserver.libinput.enable = true;

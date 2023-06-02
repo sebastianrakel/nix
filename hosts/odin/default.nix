@@ -32,8 +32,5 @@
 
   swapDevices = [ { device = "/dev/disk/by-label/NIXSWAP"; } ];
 
-  networking.networkmanager.enable = true;
-  users.users.sebastian.extraGroups = [ "networkmanager" ];
-
   system.stateVersion = "22.11";
 }

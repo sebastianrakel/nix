@@ -53,6 +53,8 @@
       enable = true;
     };
     displayManager.startx.enable = true;
+    layout = "us";
+    xkbVariant = "altgr-intl";
   };
 
   hardware.opengl = {

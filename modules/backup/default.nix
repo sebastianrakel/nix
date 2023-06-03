@@ -11,6 +11,7 @@
     exclude = [
       "/home/*/.cache"
       "/home/*/.local/cache"
+      "/home/*/.local/share/containers"
       "/home/*/.vagrant.d"
     ];
     timerConfig = {

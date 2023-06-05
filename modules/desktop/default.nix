@@ -39,6 +39,7 @@
     gajim
     arc-theme
     arc-icon-theme
+    azure-cli
   ];
 
   programs.gnupg.agent = {

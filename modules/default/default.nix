@@ -4,7 +4,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   system.autoUpgrade = {
-    enable = true;
+    enable = false;
     flake = "github:sebastianrakel/nix";
     dates = "*:0,15,30,45";
   };

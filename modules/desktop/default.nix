@@ -32,6 +32,7 @@
     thunderbird
     pavucontrol
     jetbrains.datagrip
+    jetbrains.pycharm-professional
     slack
     flameshot
     exfat
@@ -40,6 +41,7 @@
     arc-theme
     arc-icon-theme
     azure-cli
+    spotify
   ];
 
   programs.gnupg.agent = {

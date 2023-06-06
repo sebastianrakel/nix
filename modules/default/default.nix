@@ -32,6 +32,8 @@
     unzip
     tmux
     wireguard-tools
+    fzf
+    silver-searcher
   ];
 
   programs = {

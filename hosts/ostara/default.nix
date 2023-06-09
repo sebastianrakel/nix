@@ -42,6 +42,7 @@
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   users.users.sebastian.extraGroups = [ "networkmanager" ];
+  services.xserver.libinput.touchpad.disableWhileTyping = true;
 
   system.stateVersion = "22.11";
 }

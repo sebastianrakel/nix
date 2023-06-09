@@ -42,6 +42,7 @@
     arc-icon-theme
     azure-cli
     spotify
+    yubikey-manager
   ];
 
   programs.gnupg.agent = {

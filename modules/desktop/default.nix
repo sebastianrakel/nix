@@ -43,6 +43,7 @@
     azure-cli
     spotify
     yubikey-manager
+    discord
   ];
 
   programs.gnupg.agent = {

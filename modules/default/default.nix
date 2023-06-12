@@ -34,6 +34,7 @@
     wireguard-tools
     fzf
     silver-searcher
+    jq
   ];
 
   programs = {

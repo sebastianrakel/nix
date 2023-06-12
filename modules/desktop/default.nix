@@ -44,6 +44,7 @@
     spotify
     yubikey-manager
     discord
+    postman
   ];
 
   programs.gnupg.agent = {

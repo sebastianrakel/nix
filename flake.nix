@@ -30,6 +30,7 @@
         ./modules/systemd-boot
         ./modules/desktop
         ./modules/vagrant
+        ./modules/3d-printing
       ];
 
       hosts.sulu.modules = [

@@ -60,6 +60,7 @@
     yubikey-manager
     discord
     postman
+    git-crypt
   ];
 
   programs.gnupg.agent = {
@@ -93,4 +94,11 @@
   };
 
   services.gvfs.enable = true;
+
+  services.syncthing = {
+    enable = true;
+    user = "sebastian";
+    dataDir = "/home/sebastian/Documents";
+    configDir = "/home/sebastian/.config/syncthing";
+  };
 }

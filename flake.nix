@@ -32,6 +32,7 @@
         ./modules/vagrant
         ./modules/3d-printing
         ./modules/bluetooth
+        ./modules/gaming
       ];
 
       hosts.sulu.modules = [

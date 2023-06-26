@@ -62,6 +62,7 @@
     postman
     git-crypt
     terraform
+    nomad
   ];
 
   programs.gnupg.agent = {

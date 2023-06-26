@@ -63,6 +63,7 @@
     git-crypt
     terraform
     nomad
+    gcc
   ];
 
   programs.gnupg.agent = {

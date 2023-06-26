@@ -61,6 +61,7 @@
     discord
     postman
     git-crypt
+    terraform
   ];
 
   programs.gnupg.agent = {

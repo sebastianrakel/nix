@@ -31,6 +31,7 @@
         ./modules/desktop
         ./modules/vagrant
         ./modules/3d-printing
+        ./modules/bluetooth
       ];
 
       hosts.sulu.modules = [
@@ -42,6 +43,7 @@
         ./modules/luks-ssh
         ./modules/podman
         ./modules/printing
+        ./modules/bluetooth
       ];
 
       hosts.odin.modules = [

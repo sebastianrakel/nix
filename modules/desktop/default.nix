@@ -65,6 +65,7 @@
     terraform
     nomad
     gcc
+    inkscape
   ];
 
   programs.gnupg.agent = {

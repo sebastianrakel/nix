@@ -106,4 +106,14 @@
     dataDir = "/home/sebastian/Documents";
     configDir = "/home/sebastian/.config/syncthing";
   };
+
+  location.latitude = 52.49857143211573;
+  location.longitude = 7.227237925464914;
+  services.redshift = {
+    enable = true;
+    temperature = {
+      day = 5500;
+      night = 3700;
+    };
+  };
 }

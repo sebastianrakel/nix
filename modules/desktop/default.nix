@@ -66,6 +66,8 @@
     nomad
     gcc
     inkscape
+    qflipper
+    kicad
   ];
 
   programs.gnupg.agent = {

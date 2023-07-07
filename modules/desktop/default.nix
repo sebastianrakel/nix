@@ -67,6 +67,10 @@
     gcc
     inkscape
     kicad
+    qflipper
+    android-studio
+    android-udev-rules
+    android-tools
   ];
 
   programs.gnupg.agent = {

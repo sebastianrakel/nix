@@ -66,7 +66,6 @@
     nomad
     gcc
     inkscape
-    qflipper
     kicad
   ];
 

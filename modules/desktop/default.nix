@@ -21,6 +21,13 @@
             sha256 = "a58954ed6732eb799502e14b250ead8b21e00c3f064e196ada34dcd6a3a3f399";
           };
         });
+        pycharm-professional = super.jetbrains.pycharm-professional.overrideAttrs (_: {
+          version = "2023.1.3";
+          src = super.fetchurl {
+            url = "https://download-cdn.jetbrains.com/python/pycharm-professional-2023.1.3.tar.gz";
+            sha256 = "4cdf85c01854d7f74c9fa9efda67453356f1120e49cc5aed1168f0f32d8ee016";
+          };
+        });
       };
     })
   ];

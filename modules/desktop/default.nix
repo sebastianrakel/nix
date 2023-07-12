@@ -79,6 +79,7 @@
     android-udev-rules
     android-tools
     gimp
+    imagemagick
   ];
 
   programs.gnupg.agent = {

@@ -78,6 +78,7 @@
     android-studio
     android-udev-rules
     android-tools
+    gimp
   ];
 
   programs.gnupg.agent = {

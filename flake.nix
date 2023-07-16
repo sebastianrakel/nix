@@ -5,7 +5,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/release-23.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     fup.url = "github:gytis-ivaskevicius/flake-utils-plus";
-    disko.url = "github:nix-community/disko";
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, fup, nixos-hardware, disko }:
@@ -22,6 +25,7 @@
         ];
         specialArgs = {
           hardwareModules = nixos-hardware.nixosModules;
+          disko = disko.nixosModules;
         };
       };
 

@@ -4,7 +4,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  disko.devices = import ../../partitions/default.nix {};
+  disko.devices = import ./../../partitions/default.nix {};
 
   hardware.cpu.amd.updateMicrocode = true;
 

@@ -1,6 +1,6 @@
 { lib, inputs, config, pkgs, modulesPath, ... }:
 {
-  disk = {
+  {disk = {
     nvme0n1 = {
       device = "/dev/nvme0n1";
       type = "disk";
@@ -64,5 +64,6 @@
         };
       };
     };
+   };
   };
 }

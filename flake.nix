@@ -21,6 +21,7 @@
         system = "x86_64-linux";
         channelName = "nixpkgs";
         modules = [
+          disko.nixosModules.disko
           ./modules/default
         ];
         specialArgs = {

@@ -40,7 +40,7 @@
       };
     };
     lvm_vg = {
-      pool = {
+      vg0 = {
         type = "lvm_vg";
         lvs = {
           root = {

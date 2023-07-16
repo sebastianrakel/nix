@@ -21,7 +21,6 @@
             content = {
               type = "luks";
               name = "crypted";
-              extraFormatArgs = [ "--label NIXCRYPT" ];
               extraOpenArgs = [ "--allow-discards" ];
               keyFile = "/tmp/secret.key";
               content = {

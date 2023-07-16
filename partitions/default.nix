@@ -23,7 +23,7 @@
               name = "crypted";
               extraFormatArgs = [ "--label NIXCRYPT" ];
               extraOpenArgs = [ "--allow-discards" ];
-              settings.keyFile = "/tmp/secret.key";
+              keyFile = "/tmp/secret.key";
               content = {
                 type = "lvm_pv";
                 vg = "pool";

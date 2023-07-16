@@ -5,25 +5,19 @@
       device = "/dev/nvme0n1";
       type = "disk";
       content = {
-        type = "table";
-        format = "gpt";
-        partitions = [
-          {
-            name = "ESP";
-            start = "0";
-            end = "1G";
-            bootable = true;
+        type = "gpt";
+        partitions = {
+          ESP = {
+            size = "1G";
             type = "EF00";
             content = {
               type = "filesystem";
               format = "vfat";
               mountpoint = "/boot";
             };
-          }
-          {
-            name = "luks";
-            start = "1G";
-            end = "100%";
+          };
+          luks = {
+            size = "100%";
             content = {
               type = "luks";
               name = "crypted";
@@ -32,34 +26,34 @@
               settings.keyFile = "/tmp/secret.key";
               content = {
                 type = "lvm_pv";
-                vg = "vg0";
+                vg = "pool";
               };
             };
-          }
-        ];
+          };
+        };
       };
     };
-    lvm_vg = {
-      vg0 = {
-        type = "lvm_vg";
-        lvs = {
-          root = {
-            size = "200G";
-            content = {
-              type = "filesystem";
-              format = "ext4";
-              mountpoint = "/";
-              mountOptions = [
-                "defaults"
-              ];
-            };
+  };
+  lvm_vg = {
+    pool = {
+      type = "lvm_vg";
+      lvs = {
+        root = {
+          size = "200G";
+          content = {
+            type = "filesystem";
+            format = "ext4";
+            mountpoint = "/";
+            mountOptions = [
+              "defaults"
+            ];
           };
-          swap = {
-            size = "64G";
-            content = {
-              type = "swap";
-              resumeDevice = true;
-            };
+        };
+        swap = {
+          size = "64G";
+          content = {
+            type = "swap";
+            resumeDevice = true;
           };
         };
       };

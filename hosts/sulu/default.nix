@@ -13,12 +13,6 @@
     "kvm-amd"
   ];
   boot.extraModulePackages = [ ];
-  boot.initrd.luks.devices = {
-    cryptroot = {
-      device = "/dev/disk/by-label/NIXCRYPT";
-      preLVM = true;
-    };
-  };
 
   networking.hostName = "sulu";
   services.xserver.videoDrivers = [ "modesetting" ];

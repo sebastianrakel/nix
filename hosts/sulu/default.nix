@@ -1,8 +1,11 @@
-{ lib, inputs, config, pkgs, modulesPath, hardwareModules, ... }:
+{ lib, inputs, config, pkgs, modulesPath, hardwareModules, disko, ... }:
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
+
+  disko.devices = import ../../partitions/default.nix {};
+
   hardware.cpu.amd.updateMicrocode = true;
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "aesni_intel" "cryptd" "r8169"];
@@ -24,18 +27,6 @@
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
     cups-kyodialog3 = pkgs.cups-kyodialog3.override { region = "EU"; };
   };
-
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/NIXROOT";
-      fsType = "ext4";
-    };
-
-  fileSystems."/boot" =
-    { device = "/dev/nvme0n1p1";
-      fsType = "vfat";
-    };
-
-  swapDevices = [ { device = "/dev/disk/by-label/NIXSWAP"; } ];
 
   systemd.network.enable = true;
   systemd.network.networks."10-lan" = {

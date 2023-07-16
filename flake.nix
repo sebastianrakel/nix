@@ -5,9 +5,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/release-23.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     fup.url = "github:gytis-ivaskevicius/flake-utils-plus";
+    disko.url = "github:nix-community/disko";
   };
 
-  outputs = inputs@{ self, nixpkgs, fup, nixos-hardware }:
+  outputs = inputs@{ self, nixpkgs, fup, nixos-hardware, disko }:
     fup.lib.mkFlake {
       inherit self inputs;
 

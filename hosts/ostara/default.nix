@@ -44,5 +44,7 @@
   users.users.sebastian.extraGroups = [ "networkmanager" ];
   services.xserver.libinput.touchpad.disableWhileTyping = true;
 
+  services.hardware.bolt.enable = true;
+
   system.stateVersion = "22.11";
 }

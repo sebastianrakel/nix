@@ -9,5 +9,6 @@
     foomatic-db-ppds
     gutenprint
     gutenprintBin
+    cups-dymo
   ];
 }

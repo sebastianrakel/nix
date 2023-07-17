@@ -131,4 +131,6 @@
       night = 3700;
     };
   };
+
+  services.fwupd.enable = true;
 }

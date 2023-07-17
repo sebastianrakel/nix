@@ -39,6 +39,7 @@
         ./modules/3d-printing
         ./modules/bluetooth
         ./modules/gaming
+        ./modules/printing
       ];
 
       hosts.sulu.modules = [

@@ -80,6 +80,7 @@
     android-tools
     gimp
     imagemagick
+    yubioath-flutter
   ];
 
   programs.gnupg.agent = {

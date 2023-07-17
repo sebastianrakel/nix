@@ -19,6 +19,17 @@
     };
   };
 
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/NIXROOT";
+    fsType = "ext4";
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/nvme0n1p1";
+    fsType = "vfat";
+  };
+
+  swapDevices = [ { device = "/dev/disk/by-label/NIXSWAP"; } ];
   networking.hostName = "ostara";
 
   services.xserver.videoDrivers = [ "modesetting" ];

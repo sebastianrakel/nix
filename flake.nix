@@ -1,4 +1,4 @@
-{
+\{
   description = "My Nixos Flake Stuff";
 
   inputs = {
@@ -40,6 +40,7 @@
         ./modules/bluetooth
         ./modules/gaming
         ./modules/printing
+        ./modules/podman
       ];
 
       hosts.sulu.modules = [

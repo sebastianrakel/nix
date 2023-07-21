@@ -1,4 +1,4 @@
-\{
+{
   description = "My Nixos Flake Stuff";
 
   inputs = {

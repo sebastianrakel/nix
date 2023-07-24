@@ -2,7 +2,7 @@
   description = "My Nixos Flake Stuff";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-23.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     fup.url = "github:gytis-ivaskevicius/flake-utils-plus";
     disko = {

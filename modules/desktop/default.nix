@@ -81,6 +81,7 @@
     gimp
     imagemagick
     yubioath-flutter
+    nextcloud-client
   ];
 
   programs.gnupg.agent = {

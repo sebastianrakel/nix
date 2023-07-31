@@ -32,7 +32,6 @@
 
       hosts.ostara.modules = [
         ./hosts/ostara
-        ./modules/networkmanager
         ./modules/systemd-boot
         ./modules/desktop
         ./modules/vagrant

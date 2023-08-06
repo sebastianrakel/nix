@@ -134,4 +134,9 @@
   };
 
   services.fwupd.enable = true;
+
+  programs.evolution = {
+    enable = true;
+    plugins = [ pkgs.evolution-ews ];
+  };
 }

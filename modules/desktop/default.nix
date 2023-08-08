@@ -63,7 +63,6 @@
     pavucontrol
     jetbrains.datagrip
     jetbrains.pycharm-professional
-    jetbrains.rider
     slack
     flameshot
     exfat

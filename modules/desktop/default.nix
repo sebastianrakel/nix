@@ -15,24 +15,17 @@
     (self: super: {
       jetbrains = super.jetbrains // {
         idea-ultimate = super.jetbrains.idea-ultimate.overrideAttrs (_: {
-          version = "2023.2";
+          version = "2023.1.3";
           src = super.fetchurl {
-            url = "https://download-cdn.jetbrains.com/idea/ideaIU-2023.2.tar.gz";
-            sha256 = "d398599557cc732fd1f58f38104d7cda35e326e4cd394245a8358e02fb8878b3";
+            url = "https://download-cdn.jetbrains.com/idea/ideaIU-2023.1.3.tar.gz";
+            sha256 = "a58954ed6732eb799502e14b250ead8b21e00c3f064e196ada34dcd6a3a3f399";
           };
         });
         pycharm-professional = super.jetbrains.pycharm-professional.overrideAttrs (_: {
-          version = "2023.2";
+          version = "2023.1.3";
           src = super.fetchurl {
-            url = "https://download-cdn.jetbrains.com/python/pycharm-professional-2023.2.tar.gz";
-            sha256 = "95f1666c471a9d752c53ec0b776840552e023f6405a3b000ce6f1014125bfc83";
-          };
-        });
-        rider = super.jetbrains.rider.overrideAttrs (_: {
-          version = "2023.2";
-          src = super.fetchurl {
-            url = "https://download-cdn.jetbrains.com/rider/JetBrains.Rider-2023.2.tar.gz";
-            sha256 = "1aa3436edb94cba8ec0e51605e146ecd528affa96e0e26df572c2437e9b00d2f";
+            url = "https://download-cdn.jetbrains.com/python/pycharm-professional-2023.1.3.tar.gz";
+            sha256 = "4cdf85c01854d7f74c9fa9efda67453356f1120e49cc5aed1168f0f32d8ee016";
           };
         });
       };
@@ -46,7 +39,7 @@
     rofi
     polybar
     feh
-    emacs29
+    emacs
     gopass
     gopass-jsonapi
     pinentry-gnome

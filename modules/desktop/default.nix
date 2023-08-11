@@ -39,7 +39,7 @@
     rofi
     polybar
     feh
-    emacs
+    emacs29
     gopass
     gopass-jsonapi
     pinentry-gnome

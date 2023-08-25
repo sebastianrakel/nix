@@ -30,6 +30,7 @@
         });
       };
     })
+    (final: prev: import ../../packages { pkgs = final; })
   ];
 
   networking.firewall.enable = false;
@@ -83,6 +84,13 @@
     imagemagick
     yubioath-flutter
     nextcloud-client
+    texstudio
+    texlive.combined.scheme-full
+    android-tools
+    teams
+    gh
+    kdiff3
+    workspace-switcher
   ];
 
   programs.gnupg.agent = {

@@ -92,6 +92,7 @@
     kdiff3
     workspace-switcher
     fb-client
+    dunst
   ];
 
   programs.gnupg.agent = {

@@ -31,6 +31,22 @@
     };
 
   swapDevices = [ { device = "/dev/disk/by-label/NIXSWAP"; } ];
+  
+  systemd.network.enable = true;
+  systemd.network.networks = {
+    "10-lan" = {
+      matchConfig.Name = "en*";
+      networkConfig.DHCP = "yes";
+      dhcpV4Config.ClientIdentifier = "mac";
+    };
+  };
+
+  services.resolved = {
+    enable = true;
+    dnssec = "false";
+  };
+
+
 
   system.stateVersion = "22.11";
 }

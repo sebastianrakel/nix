@@ -56,7 +56,6 @@
 
       hosts.odin.modules = [
         ./hosts/odin
-        ./modules/networkmanager
         ./modules/systemd-boot
         ./modules/desktop
         ./modules/vagrant

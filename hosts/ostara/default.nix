@@ -19,6 +19,10 @@
     };
   };
 
+  boot.extraModprobeConfig = ''
+    options iwlwifi disable_11ax=Y
+  '';
+
   fileSystems."/" = {
     device = "/dev/disk/by-label/NIXROOT";
     fsType = "ext4";

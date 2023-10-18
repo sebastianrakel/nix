@@ -50,7 +50,6 @@
     tdesktop
     direnv
     vscode
-    pcmanfm
     chromium
     xscreensaver
     thunderbird
@@ -87,12 +86,22 @@
     texstudio
     texlive.combined.scheme-full
     android-tools
-    teams
     gh
     kdiff3
     workspace-switcher
     fb-client
     dunst
+    mpv
+    nodejs_18
+    yarn
+    gnumake
+    aspell
+    aspellDicts.en
+    aspellDicts.de
+    ispell
+    terraform-ls
+    cinnamon.nemo
+    ripgrep
   ];
 
   programs.gnupg.agent = {

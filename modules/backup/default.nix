@@ -13,6 +13,7 @@
       "/home/*/.local/cache"
       "/home/*/.local/share/containers"
       "/home/*/.vagrant.d"
+      "/home/*/Backups/mounted"
     ];
     timerConfig = {
       OnCalendar = "*:0,15,30,45";

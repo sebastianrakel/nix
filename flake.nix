@@ -9,9 +9,10 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = inputs@{ self, nixpkgs, fup, nixos-hardware, disko }:
+  outputs = inputs@{ self, nixpkgs, fup, nixos-hardware, disko, sops-nix }:
     fup.lib.mkFlake {
       inherit self inputs;
 
@@ -23,6 +24,7 @@
         modules = [
           disko.nixosModules.disko
           ./modules/default
+          sops-nix.nixosModules.sops
         ];
         specialArgs = {
           hardwareModules = nixos-hardware.nixosModules;
@@ -63,6 +65,7 @@
         ./modules/luks-ssh
         ./modules/podman
         ./modules/3d-printing
+        ./modules/printing
       ];
     };
 }

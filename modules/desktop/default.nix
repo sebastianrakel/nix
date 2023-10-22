@@ -102,6 +102,7 @@
     terraform-ls
     cinnamon.nemo
     ripgrep
+    lsd
   ];
 
   programs.gnupg.agent = {

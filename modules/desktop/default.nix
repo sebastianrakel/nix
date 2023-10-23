@@ -156,6 +156,13 @@
 
   services.fwupd.enable = true;
 
+  services.udev.packages = [
+    pkgs.android-udev-rules
+  ];
+
+  programs.adb.enable = true;
+  users.users.sebastian.extraGroups = ["adbusers"];
+    
   programs.evolution = {
     enable = true;
     plugins = [ pkgs.evolution-ews ];

@@ -103,6 +103,9 @@
     cinnamon.nemo
     ripgrep
     lsd
+    dotnet-sdk
+    python3
+    libreoffice
   ];
 
   programs.gnupg.agent = {

@@ -106,6 +106,9 @@
     dotnet-sdk
     python3
     libreoffice
+    rustup
+    platformio
+    ccls
   ];
 
   programs.gnupg.agent = {
@@ -118,6 +121,7 @@
     enable = true;
     windowManager.herbstluftwm = {
       enable = true;
+      package = pkgs.herbstluftwm-git;
     };
     displayManager.startx.enable = true;
     layout = "us";
@@ -164,7 +168,10 @@
   ];
 
   programs.adb.enable = true;
-  users.users.sebastian.extraGroups = ["adbusers"];
+  users.users.sebastian.extraGroups = [
+    "adbusers"
+    "dialout"
+  ];
     
   programs.evolution = {
     enable = true;

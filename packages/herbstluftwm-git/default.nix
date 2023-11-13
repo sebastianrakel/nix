@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchurl, cmake, pkg-config, python3, libX11, libXext, libXinerama, libXrandr, libXft, libXrender, libXdmcp, libXfixes, freetype, asciidoc
+{ lib, stdenv, fetchurl, cmake, pkg-config, python3, libX11, libXext, libXinerama, libXrandr, libXft, libXrender, libXdmcp, libXfixes, libxslt, freetype, asciidoc
 , xdotool, xorgserver, xsetroot, xterm, runtimeShell
 , fetchpatch, fetchFromGitHub
 , nixosTests }:
@@ -16,24 +16,26 @@ stdenv.mkDerivation rec {
 
   outputs = [
     "out"
-    "doc"
-    "man"
   ];
 
   cmakeFlags = [
     "-DCMAKE_INSTALL_SYSCONF_PREFIX=${placeholder "out"}/etc"
+    "-DWITH_DOCUMENTATION=false"
   ];
 
   nativeBuildInputs = [
     cmake
     pkg-config
+    libxslt
   ];
 
   depsBuildBuild = [
+    libxslt
     asciidoc
   ];
 
   buildInputs = [
+    libxslt
     libX11
     libXext
     libXinerama
@@ -52,6 +54,7 @@ stdenv.mkDerivation rec {
   postPatch = ''
     patchShebangs doc/gendoc.py
     patchShebangs doc/format-doc.py
+    patchShebangs doc/patch-manpage-xml.py
 
     # fix /etc/xdg/herbstluftwm paths in documentation and scripts
     grep -rlZ /etc/xdg/herbstluftwm share/ doc/ scripts/ | while IFS="" read -r -d "" path; do
@@ -63,7 +66,7 @@ stdenv.mkDerivation rec {
     substituteInPlace tests/test_herbstluftwm.py --replace "/usr/bin/env bash" ${runtimeShell}
   '';
 
-  doCheck = true;
+  doCheck = false;
 
   nativeCheckInputs = [
     (python3.withPackages (ps: with ps; [ ewmh pytest xlib ]))

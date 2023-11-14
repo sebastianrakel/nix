@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     fup.url = "github:gytis-ivaskevicius/flake-utils-plus";
     disko = {
@@ -12,7 +13,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = inputs@{ self, nixpkgs, fup, nixos-hardware, disko, sops-nix }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, fup, nixos-hardware, disko, sops-nix }:
     fup.lib.mkFlake {
       inherit self inputs;
 
@@ -29,6 +30,7 @@
         specialArgs = {
           hardwareModules = nixos-hardware.nixosModules;
           disko = disko.nixosModules;
+          unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
         };
       };
 

@@ -1,4 +1,4 @@
-{ lib, inputs, config, pkgs, modulesPath, ... }:
+{ lib, inputs, config, pkgs, unstable, modulesPath, ... }:
 {
   services.pcscd.enable = true;
   services.pipewire = {
@@ -12,24 +12,6 @@
   programs.dconf.enable = true;
 
   nixpkgs.overlays = [
-    (self: super: {
-      jetbrains = super.jetbrains // {
-        idea-ultimate = super.jetbrains.idea-ultimate.overrideAttrs (_: {
-          version = "2023.1.3";
-          src = super.fetchurl {
-            url = "https://download-cdn.jetbrains.com/idea/ideaIU-2023.1.3.tar.gz";
-            sha256 = "a58954ed6732eb799502e14b250ead8b21e00c3f064e196ada34dcd6a3a3f399";
-          };
-        });
-        pycharm-professional = super.jetbrains.pycharm-professional.overrideAttrs (_: {
-          version = "2023.1.3";
-          src = super.fetchurl {
-            url = "https://download-cdn.jetbrains.com/python/pycharm-professional-2023.1.3.tar.gz";
-            sha256 = "4cdf85c01854d7f74c9fa9efda67453356f1120e49cc5aed1168f0f32d8ee016";
-          };
-        });
-      };
-    })
     (final: prev: import ../../packages { pkgs = final; })
   ];
 
@@ -40,13 +22,10 @@
     rofi
     polybar
     feh
-    emacs29
     gopass
     gopass-jsonapi
     pinentry-gnome
     mosh
-    jetbrains.idea-ultimate
-    go
     tdesktop
     direnv
     vscode
@@ -54,9 +33,6 @@
     xscreensaver
     thunderbird
     pavucontrol
-    jetbrains.datagrip
-    jetbrains.pycharm-professional
-    jetbrains.rider
     slack
     flameshot
     exfat
@@ -109,6 +85,12 @@
     rustup
     platformio
     ccls
+    unstable.go
+    unstable.emacs29
+    unstable.jetbrains.idea-ultimate
+    unstable.jetbrains.datagrip
+    unstable.jetbrains.pycharm-professional
+    unstable.jetbrains.rider
   ];
 
   programs.gnupg.agent = {

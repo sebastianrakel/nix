@@ -91,6 +91,7 @@
     unstable.jetbrains.datagrip
     unstable.jetbrains.pycharm-professional
     unstable.jetbrains.rider
+    lsd
   ];
 
   programs.gnupg.agent = {

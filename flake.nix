@@ -30,7 +30,10 @@
         specialArgs = {
           hardwareModules = nixos-hardware.nixosModules;
           disko = disko.nixosModules;
-          unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+          unstable = import nixpkgs-unstable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
         };
       };
 

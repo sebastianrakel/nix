@@ -92,6 +92,7 @@
     unstable.jetbrains.pycharm-professional
     unstable.jetbrains.rider
     lsd
+    google-chrome
   ];
 
   programs.gnupg.agent = {

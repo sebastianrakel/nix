@@ -18,6 +18,7 @@
   };
 
   networking.hostName = "odin";
+  networking.useDHCP = false;
   services.xserver.videoDrivers = [ "modesetting" ];
 
   fileSystems."/" =

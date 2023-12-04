@@ -52,6 +52,7 @@
       },
       "original": {
         "owner": "gytis-ivaskevicius",
+        "ref": "master",
         "repo": "flake-utils-plus",
         "type": "github"
       }

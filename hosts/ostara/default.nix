@@ -39,10 +39,6 @@
   services.xserver.videoDrivers = [ "modesetting" ];
   services.xserver.libinput.enable = true;
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
-
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   services.xserver.libinput.touchpad.disableWhileTyping = true;

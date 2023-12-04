@@ -18,6 +18,7 @@
   };
 
   networking.hostName = "odin";
+  networking.useNetworkd = true;
   services.xserver.videoDrivers = [ "modesetting" ];
 
   fileSystems."/" =
@@ -36,7 +37,6 @@
   systemd.network.networks = {
     "10-lan" = {
       matchConfig.Name = "en*";
-      networkConfig.DHCP = "yes";
       dhcpV4Config.ClientIdentifier = "mac";
     };
   };

@@ -44,7 +44,7 @@
     spotify
     yubikey-manager
     discord
-    postman
+    unstable.postman
     git-crypt
     terraform
     nomad

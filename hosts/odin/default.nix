@@ -18,7 +18,6 @@
   };
 
   networking.hostName = "odin";
-  networking.useNetworkd = true;
   services.xserver.videoDrivers = [ "modesetting" ];
 
   fileSystems."/" =
@@ -38,6 +37,7 @@
     "10-lan" = {
       matchConfig.Name = "en*";
       dhcpV4Config.ClientIdentifier = "mac";
+      networkConfig.DHCP = "yes";
     };
   };
 

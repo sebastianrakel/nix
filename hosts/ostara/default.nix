@@ -2,7 +2,7 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    hardwareModules.framework-12th-gen-intel
+    hardwareModules.framework-13-inch-12th-gen-intel
   ];
 
   hardware.cpu.intel.updateMicrocode = true;

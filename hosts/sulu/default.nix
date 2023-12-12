@@ -4,8 +4,6 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  disko.devices = import ./../../partitions/default.nix {};
-
   hardware.cpu.amd.updateMicrocode = true;
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "aesni_intel" "cryptd" "r8169"];
@@ -14,13 +12,30 @@
   ];
   boot.extraModulePackages = [ ];
 
-  networking.hostName = "sulu";
-  services.xserver.videoDrivers = [ "modesetting" ];
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-    cups-kyodialog3 = pkgs.cups-kyodialog3.override { region = "EU"; };
+  boot.initrd.luks.devices = {
+    cryptroot = {
+      device = "/dev/disk/by-label/NIXCRYPT";
+      preLVM = true;
+    };
   };
+
+  boot.extraModprobeConfig = ''
+    options iwlwifi disable_11ax=Y
+  '';
+
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/NIXROOT";
+    fsType = "ext4";
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/nvme0n1p1";
+    fsType = "vfat";
+  };
+
+  networking.hostName = "sulu";
+  networking.useDHCP = false;
+  services.xserver.videoDrivers = [ "modesetting" ];
 
   systemd.network.enable = true;
   systemd.network.networks."10-lan" = {
@@ -40,5 +55,5 @@
     };
   };
 
-  system.stateVersion = "22.11";
+  system.stateVersion = "23.11";
 }

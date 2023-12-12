@@ -90,7 +90,6 @@
     unstable.jetbrains.datagrip
     unstable.jetbrains.pycharm-professional
     unstable.jetbrains.rider
-    postman
     lsd
     google-chrome
   ];

@@ -55,7 +55,6 @@
         ./modules/desktop
         ./modules/vagrant
         ./modules/backup
-        ./modules/luks-ssh
         ./modules/podman
         ./modules/printing
         ./modules/bluetooth

@@ -33,6 +33,8 @@
     fsType = "vfat";
   };
 
+  nixpkgs.overlays = [ (final: prev: {vaapiIntel = prev.vaapiIntel.override { enableHybridCodec = true; }; }) ];
+
   swapDevices = [ { device = "/dev/disk/by-label/NIXSWAP"; } ];
   networking.hostName = "ostara";
   networking.useDHCP = false;

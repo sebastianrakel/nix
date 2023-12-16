@@ -95,7 +95,6 @@
     lsd
     google-chrome
     bruno
-    postman
     eww
   ];
 

@@ -46,8 +46,4 @@
     enable = true;
     dnssec = "false";
   };
-
-
-
-  system.stateVersion = "22.11";
 }

@@ -1,5 +1,7 @@
 { lib, inputs, config, pkgs, unstable, modulesPath, ... }:
 {
+  system.stateVersion = "23.11";
+  
   services.pcscd.enable = true;
   services.pipewire = {
     enable = true;
@@ -92,6 +94,9 @@
     unstable.jetbrains.rider
     lsd
     google-chrome
+    bruno
+    postman
+    eww
   ];
 
   programs.gnupg.agent = {

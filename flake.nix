@@ -10,7 +10,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, fup, nixos-hardware, disko, sops-nix }:
@@ -25,7 +24,6 @@
         modules = [
           disko.nixosModules.disko
           ./modules/default
-          sops-nix.nixosModules.sops
         ];
         specialArgs = {
           hardwareModules = nixos-hardware.nixosModules;

@@ -17,7 +17,7 @@
     (final: prev: import ../../packages { pkgs = final; })
   ];
 
-  networking.firewall.enable = false;
+  networking.firewall.enable = true;
   environment.systemPackages = with pkgs; [
     firefox
     alacritty

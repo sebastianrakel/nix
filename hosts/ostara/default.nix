@@ -18,10 +18,15 @@
       preLVM = true;
     };
   };
-  boot.resumeDevice = "/dev/disk/by-label/NIXROOT";
+  boot.resumeDevice = "/dev/disk/by-label/NIXSWAP";
 
-  systemd.sleep.extraConfig = ''
-    HandleLidSwitch=hibernate
+  services.logind = {
+    lidSwitch = "hibernate";
+    lidSwitchExternalPower = "ignore";
+  };
+  
+  services.logind.extraConfig = ''
+    HibernateDelaySec=30
   '';
 
   boot.extraModprobeConfig = ''

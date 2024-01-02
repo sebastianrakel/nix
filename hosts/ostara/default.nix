@@ -1,4 +1,4 @@
-{ lib, inputs, config, nixpkgs, modulesPath, hardwareModules, ... }:
+{ lib, inputs, config, pkgs, modulesPath, hardwareModules, ... }:
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -93,4 +93,8 @@
       STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging  
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    fw-ectool
+  ];
 }

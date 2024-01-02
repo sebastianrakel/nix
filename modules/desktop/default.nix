@@ -100,6 +100,7 @@
     element-desktop
     unstable.pmbootstrap
     libnotify
+    typescript
   ];
 
   programs.gnupg.agent = {

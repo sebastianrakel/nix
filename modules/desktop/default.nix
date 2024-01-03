@@ -96,9 +96,7 @@
     google-chrome
     bruno
     eww
-    unstable.ausweisapp
     element-desktop
-    unstable.pmbootstrap
     libnotify
     typescript
   ];

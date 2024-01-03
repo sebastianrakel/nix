@@ -18,10 +18,10 @@ rustPlatform.buildRustPackage rec {
     owner = "elkowar";
     repo = "eww";
     rev = "65d622c81f2e753f462d23121fa1939b0a84a3e0";
-    hash = "sha256-GEysmNDm+olt1WXHzRwb4ZLifkXmeP5+APAN3b81/Og=";
+    hash = "sha256-MR91Ytt9Jf63dshn7LX64LWAVygbZgQYkcTIKhfVNXI=";
   };
 
-  cargoHash = "sha256-4yeu5AgleZMOLKNynGMd0XuyZxyyZ+RmzNtuJiNPN8g=";
+  cargoHash = "sha256-W8UH7y9sqXAYp2fgZJoZyihFgceCX6nClI512LU5XT8=";
 
   nativeBuildInputs = [ pkg-config wrapGAppsHook ];
 

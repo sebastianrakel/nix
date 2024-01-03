@@ -99,6 +99,8 @@
     element-desktop
     libnotify
     typescript
+    xclip
+    neofetch
   ];
 
   programs.gnupg.agent = {

@@ -35,6 +35,7 @@
 
   networking.hostName = "sulu";
   networking.useDHCP = false;
+  networking.firewall.enable = false;
   services.xserver.videoDrivers = [ "modesetting" ];
 
   systemd.network.enable = true;

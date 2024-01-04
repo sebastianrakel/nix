@@ -48,6 +48,7 @@
   swapDevices = [ { device = "/dev/disk/by-label/NIXSWAP"; } ];
   networking.hostName = "ostara";
   networking.useDHCP = false;
+  networking.firewall.enable = true;
 
   services.xserver.videoDrivers = [ "modesetting" ];
   services.xserver.libinput.enable = true;

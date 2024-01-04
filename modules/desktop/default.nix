@@ -17,7 +17,6 @@
     (final: prev: import ../../packages { pkgs = final; })
   ];
 
-  networking.firewall.enable = true;
   environment.systemPackages = with pkgs; [
     firefox
     alacritty
@@ -81,7 +80,11 @@
     ripgrep
     lsd
     dotnet-sdk
-    python3
+    (python311.withPackages (p: with p; [
+      requests
+      pystache
+      pyyaml
+    ]))
     libreoffice
     rustup
     platformio
@@ -101,6 +104,7 @@
     typescript
     xclip
     neofetch
+    neovim
   ];
 
   programs.gnupg.agent = {

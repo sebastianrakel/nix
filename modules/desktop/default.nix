@@ -18,7 +18,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    firefox
     alacritty
     rofi
     polybar
@@ -106,6 +105,50 @@
     neofetch
     neovim
   ];
+
+  programs.firefox.enable = true;
+  programs.firefox.languagePacks = [
+    "en-US"
+    "de"
+  ];
+  programs.firefox.policies = {
+    DisableFeedbackCommands = true;
+    DisableFirefoxAccounts = true;
+    DisableFirefoxScreenshots = true;
+    DisableFirefoxStudies = true;
+    DisablePocket = true;
+    DisableSetDesktopBackground = true;
+    DisableTelemetry = true;
+    DontCheckDefaultBrowser = true;
+    HardwareAcceleration = true;
+    OverrideFirstRunPage = "about:blank";
+    OverridePostUpdatePage = "about:blank";
+    PasswordManagerEnabled = false;
+    
+    FirefoxHome = {
+      SponsoredTopSites = false;
+      Pocket = false;
+      SponsoredPocket = false;
+      Snippets = false;
+    };
+
+    FirefoxSuggest.SponsoredSuggestions = false;
+
+    ExtensionSettings =
+    let
+      mkAddOn = name: id: {
+        "${id}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/${name}/latest.xpi";
+          installation_mode = "force_installed";
+        };
+      };
+    in lib.mkMerge [
+      (mkAddOn "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
+      (mkAddOn "ublock-origin" "uBlock0@raymondhill.net")
+      (mkAddOn "gopass-bridge" "{eec37db0-22ad-4bf1-9068-5ae08df8c7e9}")
+      
+    ];
+  };
 
   programs.gnupg.agent = {
     enable = true;

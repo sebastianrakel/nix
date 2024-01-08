@@ -68,6 +68,7 @@
         ./modules/podman
         ./modules/3d-printing
         ./modules/printing
+        ./modules/bluetooth
       ];
     };
 }

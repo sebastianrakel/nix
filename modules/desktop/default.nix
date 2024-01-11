@@ -104,6 +104,9 @@
     xclip
     neofetch
     neovim
+    lua-language-server
+    lazygit
+	postman
   ];
 
   programs.firefox.enable = true;

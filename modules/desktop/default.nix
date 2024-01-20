@@ -106,10 +106,31 @@
     neovim
     lua-language-server
     lazygit
-	  postman
+    postman
     mpd
     ncmpcpp
   ];
+
+  systemd.user.services.xscreensaver-suspend = {
+    restartIfChanged = false;
+    unitConfig = {
+      Description = "Helper service to bind locker to sleep.target";
+    };
+    serviceConfig = {
+      ExecStart = "${pkgs.xscreensaver}/bin/xscreensaver-command -lock";
+      Type = "simple";
+    };
+    before = [
+      "pre-sleep.service"
+    ];
+    wantedBy= [
+      "pre-sleep.service"
+    ];
+    environment = {
+      DISPLAY = ":0";
+      XAUTHORITY = "/home/sebastian/.Xauthority";
+    };
+  };
 
   programs.firefox.enable = true;
   programs.firefox.languagePacks = [

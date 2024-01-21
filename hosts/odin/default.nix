@@ -20,6 +20,7 @@
   networking.hostName = "odin";
   networking.useDHCP = false;
   services.xserver.videoDrivers = [ "modesetting" ];
+  networking.firewall.enable = false;
 
   fileSystems."/" =
     { device = "/dev/disk/by-label/NIXROOT";

@@ -37,12 +37,25 @@
   networking.useDHCP = false;
   networking.firewall.enable = false;
   services.xserver.videoDrivers = [ "modesetting" ];
-
+ 
   systemd.network.enable = true;
-  systemd.network.networks."10-lan" = {
-    matchConfig.Name = "en*";
-    networkConfig.DHCP = "yes";
-    dhcpV4Config.ClientIdentifier = "mac";
+  systemd.network.networks = {
+    "10-lan" = {
+      matchConfig.Name = "en*";
+      networkConfig.DHCP = "yes";
+      dhcpV4Config.ClientIdentifier = "mac";
+    };
+    "10-wlan" = {
+      matchConfig.Name = "wl*";
+      networkConfig.DHCP = "yes";
+      dhcpV4Config.ClientIdentifier = "mac";
+    };
+  };
+
+  networking.wireless.iwd.enable = true;
+  services.resolved = {
+    enable = true;
+    dnssec = "false";
   };
 
   systemd.network.links."10-wol" = {

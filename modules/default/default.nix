@@ -50,4 +50,5 @@
   };
 
   nix.settings.auto-optimise-store = true;
+  nix.registry.nixpkgs.flake = inputs.nixpkgs;
 }

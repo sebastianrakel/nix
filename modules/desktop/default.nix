@@ -78,7 +78,7 @@
     cinnamon.nemo
     ripgrep
     lsd
-    dotnet-sdk
+    dotnet-sdk_8
     (python311.withPackages (p: with p; [
       requests
       pystache
@@ -106,7 +106,9 @@
     neovim
     lua-language-server
     lazygit
-	postman
+	  postman
+    mpd
+    ncmpcpp
   ];
 
   programs.firefox.enable = true;
@@ -114,7 +116,7 @@
     "en-US"
     "de"
   ];
-  programs.firefox.policies = {
+  programs.firefoxn.policies = {
     DisableFeedbackCommands = true;
     DisableFirefoxAccounts = true;
     DisableFirefoxScreenshots = true;

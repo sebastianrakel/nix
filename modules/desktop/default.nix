@@ -116,7 +116,7 @@
     "en-US"
     "de"
   ];
-  programs.firefoxn.policies = {
+  programs.firefox.policies = {
     DisableFeedbackCommands = true;
     DisableFirefoxAccounts = true;
     DisableFirefoxScreenshots = true;

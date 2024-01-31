@@ -33,6 +33,8 @@
     fsType = "vfat";
   };
 
+  swapDevices = [ { device = "/dev/disk/by-label/NIXSWAP"; } ];
+
   networking.hostName = "sulu";
   networking.useDHCP = false;
   networking.firewall.enable = false;

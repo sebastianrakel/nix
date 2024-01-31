@@ -107,12 +107,9 @@
     lua-language-server
     lazygit
     postman
-<<<<<<< HEAD
     mpd
     ncmpcpp
-=======
     signal-desktop
->>>>>>> 44eb5aa (Add signal-desktop)
   ];
 
   systemd.user.services.xscreensaver-suspend = {

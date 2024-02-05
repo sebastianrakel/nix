@@ -20,6 +20,8 @@
   networking.hostName = "odin";
   networking.useDHCP = false;
   services.xserver.videoDrivers = [ "modesetting" ];
+  services.xserver.libinput.enable = true;
+  services.xserver.libinput.touchpad.naturalScrolling = true;
   networking.firewall.enable = false;
 
   fileSystems."/" =

@@ -60,6 +60,8 @@
     dnssec = "false";
   };
 
+  services.teamviewer.enable = true;
+
   systemd.network.links."10-wol" = {
     matchConfig = {
       MACAddress = "3c:7c:3f:d7:c9:cc";

@@ -95,6 +95,20 @@
     };
   };
 
+  hardware.printers = {
+    ensurePrinters = [
+      {
+        name = "Lexmark_CS317dn";
+        location = "Hackerspace";
+        deviceUri = "ipp://192.168.10.250";
+        model = "foomatic-db-ppds/Lexmark-CS310dn-Postscript-Lexmark.ppd.gz";
+        ppdOptions = {
+          PageSize = "A4";
+        };
+      }
+    ];
+  };
+  
   environment.systemPackages = with pkgs; [
     fw-ectool
   ];

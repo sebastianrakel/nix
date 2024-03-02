@@ -111,6 +111,8 @@
     ncmpcpp
     signal-desktop
     emacs-lsp-booster
+    senpai
+    weechat
   ];
 
   systemd.user.services.xscreensaver-suspend = {

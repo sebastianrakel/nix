@@ -110,6 +110,7 @@
     mpd
     ncmpcpp
     signal-desktop
+    emacs-lsp-booster
   ];
 
   systemd.user.services.xscreensaver-suspend = {

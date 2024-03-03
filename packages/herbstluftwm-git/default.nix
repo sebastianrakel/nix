@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
     owner = "herbstluftwm";
     repo = "herbstluftwm";
     rev = "master";
-    hash = "sha256-IA3YYFHToz3d1EMeEAqt5mfo/iyxq+UkU8QvAL92230=";
+    hash = "sha256-Otp8ifYqHSYDVYw09hYvGqZ8DYY1/LDWfGBONOt6vuQ=";
   };
 
   outputs = [

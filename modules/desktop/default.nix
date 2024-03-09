@@ -113,6 +113,7 @@
     emacs-lsp-booster
     senpai
     weechat
+    unstable.bambu-studio
   ];
 
   systemd.user.services.xscreensaver-suspend = {

@@ -113,7 +113,8 @@
     emacs-lsp-booster
     senpai
     weechat
-    unstable.bambu-studio
+    unstable.orca-slicer
+    freecad
   ];
 
   systemd.user.services.xscreensaver-suspend = {
@@ -155,7 +156,6 @@
     OverrideFirstRunPage = "about:blank";
     OverridePostUpdatePage = "about:blank";
     PasswordManagerEnabled = false;
-    
     FirefoxHome = {
       SponsoredTopSites = false;
       Pocket = false;
@@ -177,7 +177,6 @@
       (mkAddOn "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
       (mkAddOn "ublock-origin" "uBlock0@raymondhill.net")
       (mkAddOn "gopass-bridge" "{eec37db0-22ad-4bf1-9068-5ae08df8c7e9}")
-      
     ];
   };
 

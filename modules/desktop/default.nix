@@ -115,6 +115,7 @@
     weechat
     unstable.orca-slicer
     freecad
+    multimarkdown
   ];
 
   systemd.user.services.xscreensaver-suspend = {

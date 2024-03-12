@@ -116,6 +116,7 @@
     unstable.orca-slicer
     freecad
     multimarkdown
+    terragrunt
   ];
 
   systemd.user.services.xscreensaver-suspend = {

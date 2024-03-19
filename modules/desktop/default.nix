@@ -113,10 +113,8 @@
     emacs-lsp-booster
     senpai
     weechat
-    unstable.orca-slicer
     freecad
     multimarkdown
-    terragrunt
   ];
 
   systemd.user.services.xscreensaver-suspend = {

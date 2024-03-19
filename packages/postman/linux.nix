@@ -35,6 +35,7 @@
 , libXScrnSaver
 , libxkbcommon
 , libdrm
+, libsecret
 , mesa
 # It's unknown which version of openssl that postman expects but it seems that
 # OpenSSL 3+ seems to work fine (cf.
@@ -58,7 +59,7 @@ let
 
     x86_64-linux = {
       arch = "64";
-      sha256 = "sha256-NH5bfz74/WIXbNdYs6Hoh/FF54v2+b4Ci5T7Y095Akw=";
+      sha256 = "sha256-PTWx/DbATsaH/uAf3RUrbpCR7I3KMo6ex/L85f5Ytso=";
     };
   }.${stdenv.hostPlatform.system} or (throw "Unsupported system: ${stdenv.hostPlatform.system}");
 
@@ -121,6 +122,7 @@ stdenv.mkDerivation rec {
     libXtst
     libXScrnSaver
     libxkbcommon
+    libsecret
     xorg.libxshmfence
   ];
 

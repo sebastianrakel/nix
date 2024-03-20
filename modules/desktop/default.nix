@@ -1,7 +1,16 @@
-{ lib, inputs, config, pkgs, unstable, modulesPath, ... }:
+{ lib, inputs, config, pkgs, unstable, modulesPath, callPackage, ... }:
 {
+
+  imports = [
+    ./browser.nix
+    ./displaymanager.nix
+  ];
+
   system.stateVersion = "23.11";
-  
+
+  display-manager.useWayland = false;
+
+  services.dbus.enable = true;
   services.pcscd.enable = true;
   services.pipewire = {
     enable = true;
@@ -18,10 +27,10 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    dbus
     alacritty
     rofi
     polybar
-    feh
     gopass
     gopass-jsonapi
     pinentry-gnome
@@ -30,7 +39,6 @@
     direnv
     vscode
     chromium
-    xscreensaver
     thunderbird
     pavucontrol
     slack
@@ -97,11 +105,9 @@
     lsd
     google-chrome
     bruno
-    eww
     element-desktop
     libnotify
     typescript
-    xclip
     neofetch
     neovim
     lua-language-server
@@ -116,27 +122,6 @@
     freecad
     multimarkdown
   ];
-
-  systemd.user.services.xscreensaver-suspend = {
-    restartIfChanged = false;
-    unitConfig = {
-      Description = "Helper service to bind locker to sleep.target";
-    };
-    serviceConfig = {
-      ExecStart = "${pkgs.xscreensaver}/bin/xscreensaver-command -lock";
-      Type = "simple";
-    };
-    before = [
-      "pre-sleep.service"
-    ];
-    wantedBy= [
-      "pre-sleep.service"
-    ];
-    environment = {
-      DISPLAY = ":0";
-      XAUTHORITY = "/home/sebastian/.Xauthority";
-    };
-  };
 
   programs.firefox.enable = true;
   programs.firefox.languagePacks = [
@@ -180,21 +165,12 @@
     ];
   };
 
+  browser.starter = "firefox.desktop";
+
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
     pinentryFlavor = "gnome3";
-  };
-
-  services.xserver = {
-    enable = true;
-    windowManager.herbstluftwm = {
-      enable = true;
-      package = pkgs.herbstluftwm-git;
-    };
-    displayManager.startx.enable = true;
-    layout = "us";
-    xkbVariant = "altgr-intl";
   };
 
   hardware.opengl = {
@@ -205,12 +181,6 @@
     ];
   };
 
-  xdg.mime.defaultApplications = {
-    "text/html" = "firefox.desktop";
-    "x-scheme-handler/http" = "firefox.desktop";
-    "x-scheme-handler/https" = "firefox.desktop";
-  };
-
   services.gvfs.enable = true;
 
   services.syncthing = {
@@ -218,16 +188,6 @@
     user = "sebastian";
     dataDir = "/home/sebastian/Documents";
     configDir = "/home/sebastian/.config/syncthing";
-  };
-
-  location.latitude = 52.49857143211573;
-  location.longitude = 7.227237925464914;
-  services.redshift = {
-    enable = true;
-    temperature = {
-      day = 5500;
-      night = 3700;
-    };
   };
 
   services.fwupd.enable = true;
@@ -241,9 +201,4 @@
     "adbusers"
     "dialout"
   ];
-    
-  programs.evolution = {
-    enable = true;
-    plugins = [ pkgs.evolution-ews ];
-  };
 }

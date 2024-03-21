@@ -5,7 +5,7 @@
   ];
 
   hardware.cpu.amd.updateMicrocode = true;
-
+  
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "aesni_intel" "cryptd" "r8169"];
   boot.kernelModules = [
     "kvm-amd"
@@ -36,11 +36,11 @@
   swapDevices = [ { device = "/dev/disk/by-label/NIXSWAP"; } ];
 
   networking.hostName = "sulu";
-  networking.useDHCP = false;
+  networking.useDHCP = true;
+  networking.useNetworkd = true;
   networking.firewall.enable = false;
   services.xserver.videoDrivers = [ "modesetting" ];
- 
-  systemd.network.enable = true;
+
   systemd.network.networks = {
     "10-lan" = {
       matchConfig.Name = "en*";
@@ -73,5 +73,6 @@
     };
   };
 
+  display-manager.useWayland = true;
   system.stateVersion = "23.11";
 }

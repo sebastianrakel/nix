@@ -1,6 +1,7 @@
 { lib, inputs, config, pkgs, modulesPath, ... }:
 {
   boot.initrd.network.enable = true;
+  boot.initrd.systemd.users.root.shell = "/bin/cryptsetup-askpass";
   boot.initrd.network.ssh = {
     enable = true;
     port = 22;
@@ -12,4 +13,5 @@
       "/etc/ssh/ssh_host_ed25519_key"
     ];
   };
+
 }

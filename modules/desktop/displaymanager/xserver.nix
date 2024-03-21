@@ -7,6 +7,12 @@ lib.mkIf (! config.display-manager.useWayland) {
     eww
   ];
 
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
+  programs.gnupg.agent = {
+    pinentryFlavor = "gnome3";
+  };
+
   systemd.user.services.xscreensaver-suspend = {
     restartIfChanged = false;
     unitConfig = {
@@ -29,7 +35,6 @@ lib.mkIf (! config.display-manager.useWayland) {
   };
 
   services.xserver = {
-    enable = true;
     windowManager.herbstluftwm = {
       enable = true;
       package = pkgs.herbstluftwm-git;

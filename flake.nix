@@ -56,6 +56,7 @@
         ./modules/podman
         ./modules/printing
         ./modules/bluetooth
+        ./modules/luks-ssh
       ];
 
       hosts.odin.modules = [

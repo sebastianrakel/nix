@@ -8,8 +8,6 @@
 
   system.stateVersion = "23.11";
 
-  display-manager.useWayland = false;
-
   services.dbus.enable = true;
   services.pcscd.enable = true;
   services.pipewire = {
@@ -18,19 +16,20 @@
     pulse.enable = true;
   };
 
-  services.gnome.gnome-keyring.enable = true;
-  programs.seahorse.enable = true;
   programs.dconf.enable = true;
 
   nixpkgs.overlays = [
     (final: prev: import ../../packages { pkgs = final; })
   ];
 
+  services.xserver = {
+    enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     dbus
     alacritty
     rofi
-    polybar
     gopass
     gopass-jsonapi
     pinentry-gnome
@@ -170,7 +169,6 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryFlavor = "gnome3";
   };
 
   hardware.opengl = {

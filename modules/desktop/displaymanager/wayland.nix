@@ -1,12 +1,14 @@
 { lib, inputs, config, pkgs, unstable, modulesPath, ... }:
-lib.mkIf (! config.display-manager.useWayland) {
+lib.mkIf (config.display-manager.useWayland) {
   environment.systemPackages = with pkgs; [
-    feh
-    xscreensaver
-    xclip
     eww-wayland
+    swaylock
+    hyprpaper
   ];
 
+  security.pam.services.swaylock = {};
+  
   services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
   programs.hyprland.enable = true;
 }

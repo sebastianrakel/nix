@@ -4,5 +4,6 @@
     openscad
     super-slicer
     cura
+    bambu-studio
   ];
 }

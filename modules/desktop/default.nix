@@ -118,7 +118,6 @@
     emacs-lsp-booster
     senpai
     weechat
-    freecad
     multimarkdown
   ];
 

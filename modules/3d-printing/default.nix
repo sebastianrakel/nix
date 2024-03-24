@@ -5,5 +5,6 @@
     super-slicer
     cura
     bambu-studio
+    freecad
   ];
 }

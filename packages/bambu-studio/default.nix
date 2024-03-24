@@ -20,6 +20,10 @@ pkgs.appimageTools.wrapType2 rec {
     curl
     cacert
     glib-networking
+    gst_all_1.gstreamer
+    gst_all_1.gst-plugins-base
+    gst_all_1.gst-plugins-bad
+    gst_all_1.gst-plugins-good
   ];
 
   profile = ''

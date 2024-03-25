@@ -39,7 +39,6 @@ lib.mkIf (! config.display-manager.useWayland) {
       enable = true;
       package = pkgs.herbstluftwm-git;
     };
-    displayManager.startx.enable = true;
     layout = "us";
     xkbVariant = "altgr-intl";
   };

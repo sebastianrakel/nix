@@ -10,10 +10,14 @@ in {
     };
   };
 
- 
   imports = [
+    ./../../services/lemurs
     ./displaymanager/wayland.nix
     ./displaymanager/xserver.nix
   ];
+
+  config.services.xserver.displayManager.lemurs = {
+    enable = true;
+  };
 }
 

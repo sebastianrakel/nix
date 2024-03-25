@@ -16,6 +16,7 @@
 
   users.users.sebastian = {
     isNormalUser = true;
+    initialPassword = "changeme";
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINo6u1C58Gc4ZzpgxsDSPK49i+bnvPZv/p5Tyw2/NwyP sebastian@sebastianrakel.de"

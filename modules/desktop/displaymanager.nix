@@ -15,9 +15,5 @@ in {
     ./displaymanager/wayland.nix
     ./displaymanager/xserver.nix
   ];
-
-  config.services.xserver.displayManager.lemurs = {
-    enable = true;
-  };
 }
 

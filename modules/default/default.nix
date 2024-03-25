@@ -9,11 +9,16 @@
     dates = "*:0,15,30,45";
   };
 
-  users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINo6u1C58Gc4ZzpgxsDSPK49i+bnvPZv/p5Tyw2/NwyP sebastian@sebastianrakel.de"
-  ];
+  users.users.root = {
+    initialPassword = "changeme";
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINo6u1C58Gc4ZzpgxsDSPK49i+bnvPZv/p5Tyw2/NwyP sebastian@sebastianrakel.de"
+    ];
+  };
+  
   services.openssh.enable = true;
 
+  users.mutableUsers = true;
   users.users.sebastian = {
     isNormalUser = true;
     initialPassword = "changeme";

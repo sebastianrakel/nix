@@ -90,6 +90,7 @@
       requests
       pystache
       pyyaml
+      python-lsp-server
     ]))
     libreoffice
     rustup

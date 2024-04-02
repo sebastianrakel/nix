@@ -20,6 +20,12 @@
 
   nixpkgs.overlays = [
     (final: prev: import ../../packages { pkgs = final; })
+    (final: prev: { weechat = prev.weechat.override { configure = { availablePlugins, ... }: {
+                      plugins = builtins.attrValues (availablePlugins // {
+                        python = availablePlugins.python.withPackages (ps: with ps; [ requests ]);
+                      });
+                    }; };
+                  })
   ];
 
   services.xserver = {

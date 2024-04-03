@@ -73,6 +73,5 @@
     };
   };
 
-  display-manager.useWayland = true;
   system.stateVersion = "23.11";
 }

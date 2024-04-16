@@ -126,6 +126,7 @@
     senpai
     weechat
     multimarkdown
+    playerctl
   ];
 
   programs.firefox.enable = true;
@@ -176,6 +177,8 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  fonts.fontconfig.defaultFonts.monospace = []; 
 
   hardware.opengl = {
     enable = true;

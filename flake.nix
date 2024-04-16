@@ -57,6 +57,7 @@
         ./modules/printing
         ./modules/bluetooth
         ./modules/luks-ssh
+        ./modules/3d-printing
       ];
 
       hosts.odin.modules = [

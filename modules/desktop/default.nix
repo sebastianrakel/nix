@@ -127,6 +127,7 @@
     weechat
     multimarkdown
     playerctl
+    omnisharp-roslyn
   ];
 
   programs.firefox.enable = true;

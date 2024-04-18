@@ -42,7 +42,7 @@
     mosh
     tdesktop
     direnv
-    vscode
+    unstable.vscode
     chromium
     thunderbird
     pavucontrol
@@ -128,6 +128,7 @@
     multimarkdown
     playerctl
     omnisharp-roslyn
+    zeal
   ];
 
   programs.firefox.enable = true;

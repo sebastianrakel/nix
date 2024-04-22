@@ -4,7 +4,7 @@ lib.mkIf (! config.display-manager.useWayland) {
     feh
     xscreensaver
     xclip
-    eww
+    unstable.eww
   ];
 
   services.gnome.gnome-keyring.enable = true;

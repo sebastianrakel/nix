@@ -104,7 +104,9 @@
     ccls
     unstable.go
     unstable.emacs29
-    unstable.jetbrains-toolbox
+    unstable.jetbrains.idea-ultimate
+    unstable.jetbrains.datagrip
+    unstable.jetbrains.rider
     lsd
     google-chrome
     bruno

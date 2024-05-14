@@ -128,6 +128,8 @@
     playerctl
     omnisharp-roslyn
     zeal
+    msmtp
+    (pkgs.isync.override { withCyrusSaslXoauth2 = true; })
   ];
 
   programs.firefox.enable = true;

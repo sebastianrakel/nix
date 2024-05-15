@@ -24,11 +24,11 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ pkg-config perl ]
     ++ lib.optionals withCyrusSaslXoauth2 [ makeWrapper ];
-  buildInputs = [ openssl db cyrus_sasl zlib ];
+  buildInputs = [ openssl db cyrus_sasl zlib];
 
   postInstall = lib.optionalString withCyrusSaslXoauth2 ''
     wrapProgram "$out/bin/mbsync" \
-        --prefix SASL_PATH : "${lib.makeSearchPath "lib/sasl2" [ openssl zlib cyrus-sasl-xoauth2 ]}"
+        --prefix SASL_PATH : "${cyrus_sasl.out}/lib/sasl2:${cyrus-sasl-xoauth2}/lib/sasl2"
   '';
 
   meta = with lib; {

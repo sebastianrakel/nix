@@ -130,6 +130,8 @@
     zeal
     msmtp
     (pkgs.isync.override { withCyrusSaslXoauth2 = true; })
+    notmuch
+    aerc
   ];
 
   programs.firefox.enable = true;

@@ -35,6 +35,19 @@
         };
       };
 
+      hosts.quarktasche.modules = [
+        ./hosts/quarktasche
+        ./modules/systemd-boot
+        ./modules/desktop
+        ./modules/vagrant
+        ./modules/backup
+        ./modules/luks-ssh
+        ./modules/podman
+        ./modules/3d-printing
+        ./modules/printing
+        ./modules/bluetooth
+      ]; 
+
       hosts.ostara.modules = [
         ./hosts/ostara
         ./modules/systemd-boot
@@ -71,6 +84,6 @@
         ./modules/3d-printing
         ./modules/printing
         ./modules/bluetooth
-      ];
+      ]; 
     };
 }

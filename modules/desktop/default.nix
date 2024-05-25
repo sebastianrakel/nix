@@ -93,6 +93,7 @@
     lsd
     dotnet-sdk_8
     (python311.withPackages (p: with p; [
+      pip
       requests
       pystache
       pyyaml
@@ -117,7 +118,7 @@
     neovim
     lua-language-server
     lazygit
-    postman
+    #postman
     mpd
     ncmpcpp
     signal-desktop
@@ -132,6 +133,7 @@
     (pkgs.isync.override { withCyrusSaslXoauth2 = true; })
     notmuch
     aerc
+    ffmpegthumbnailer
   ];
 
   programs.firefox.enable = true;

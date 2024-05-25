@@ -17,7 +17,7 @@
     };
   };
 
-  networking.hostName = "odin";
+  networking.hostName = "quarktasche";
   networking.useDHCP = false;
   services.xserver.videoDrivers = [ "modesetting" ];
   services.xserver.libinput.enable = true;

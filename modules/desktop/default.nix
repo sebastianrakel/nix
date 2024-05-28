@@ -38,7 +38,7 @@
     rofi
     gopass
     gopass-jsonapi
-    pinentry-gnome
+    pinentry-gnome3
     mosh
     tdesktop
     direnv
@@ -53,7 +53,6 @@
     gajim
     arc-theme
     arc-icon-theme
-    azure-cli
     spotify
     yubikey-manager
     discord

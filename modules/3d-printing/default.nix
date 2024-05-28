@@ -2,7 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     openscad
-    super-slicer
     cura
     bambu-studio
     freecad

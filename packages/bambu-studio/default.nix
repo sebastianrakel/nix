@@ -34,7 +34,7 @@ pkgs.appimageTools.wrapType2 rec {
   meta = with lib; {
     description = "PC Software for BambuLab's 3D printers";
     homepage = "https://github.com/bambulab/BambuStudio";
-    license = licenses.agpl3;
+    license = licenses.agpl3Plus;
     maintainers = with maintainers; [ sebastianrakel ];
     mainProgram = "bambu-studio";
     platforms = platforms.linux;

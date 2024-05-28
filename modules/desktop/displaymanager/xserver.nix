@@ -9,9 +9,6 @@ lib.mkIf (! config.display-manager.useWayland) {
 
   services.gnome.gnome-keyring.enable = true;
   programs.seahorse.enable = true;
-  programs.gnupg.agent = {
-    pinentryFlavor = "gnome3";
-  };
 
   systemd.user.services.xscreensaver-suspend = {
     restartIfChanged = false;
@@ -40,8 +37,8 @@ lib.mkIf (! config.display-manager.useWayland) {
       package = pkgs.herbstluftwm-git;
     };
     displayManager.startx.enable = true;
-    layout = "us";
-    xkbVariant = "altgr-intl";
+    xkb.layout = "us";
+    xkb.variant = "altgr-intl";
   };
 
   location.latitude = 52.49857143211573;

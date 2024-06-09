@@ -1,9 +1,9 @@
-{ lib, inputs, config, pkgs, modulesPath, ... }:
+{ lib, inputs, config, pkgs, unstable, modulesPath, ... }:
 {
   environment.systemPackages = with pkgs; [
     openscad
     cura
-    bambu-studio
+    unstable.bambu-studio
     freecad
   ];
 }

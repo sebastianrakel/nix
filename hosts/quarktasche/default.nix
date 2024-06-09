@@ -8,6 +8,7 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "aesni_intel" "cryptd" "igb"];
   boot.kernelModules = [
     "kvm-amd"
+    "amdgpu"
   ];
   boot.extraModulePackages = [ ];
   boot.initrd.luks.devices = {
@@ -19,9 +20,7 @@
 
   networking.hostName = "quarktasche";
   networking.useDHCP = false;
-  services.xserver.videoDrivers = [ "modesetting" ];
-  services.xserver.libinput.enable = true;
-  services.xserver.libinput.touchpad.naturalScrolling = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
   networking.firewall.enable = false;
 
   fileSystems."/" =

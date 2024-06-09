@@ -68,7 +68,7 @@
     android-tools
     gimp
     imagemagick
-    yubioath-flutter
+    unstable.yubioath-flutter
     nextcloud-client
     texstudio
     texlive.combined.scheme-full
@@ -117,7 +117,7 @@
     neovim
     lua-language-server
     lazygit
-    #postman
+    postman
     mpd
     ncmpcpp
     signal-desktop
@@ -133,6 +133,8 @@
     notmuch
     aerc
     ffmpegthumbnailer
+    (azure-cli.withExtensions [ azure-cli.extensions.azure-devops ])
+    twingate
   ];
 
   programs.firefox.enable = true;

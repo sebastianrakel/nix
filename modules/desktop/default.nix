@@ -80,7 +80,7 @@
     dunst
     mpv
     nodejs_18
-    yarn
+    (pkgs.yarn.override { nodejs = null; })
     gnumake
     aspell
     aspellDicts.en

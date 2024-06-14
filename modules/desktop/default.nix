@@ -134,7 +134,8 @@
     aerc
     ffmpegthumbnailer
     (azure-cli.withExtensions [ azure-cli.extensions.azure-devops ])
-    twingate
+    ruby
+    bundler
   ];
 
   programs.firefox.enable = true;

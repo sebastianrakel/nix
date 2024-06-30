@@ -51,8 +51,8 @@
   networking.firewall.enable = true;
 
   services.xserver.videoDrivers = [ "modesetting" ];
-  services.xserver.libinput.enable = true;
-  services.xserver.libinput.touchpad.disableWhileTyping = true;
+  services.libinput.enable = true;
+  services.libinput.touchpad.disableWhileTyping = true;
   services.hardware.bolt.enable = true;
 
   systemd.network.enable = true;

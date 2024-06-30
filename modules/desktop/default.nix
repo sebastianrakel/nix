@@ -136,6 +136,7 @@
     (azure-cli.withExtensions [ azure-cli.extensions.azure-devops ])
     ruby
     bundler
+    puppet-bolt
   ];
 
   programs.firefox.enable = true;

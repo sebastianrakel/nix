@@ -137,6 +137,7 @@
     ruby
     bundler
     puppet-bolt
+    chatblade
   ];
 
   programs.firefox.enable = true;

@@ -6,13 +6,18 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     fup.url = "github:gytis-ivaskevicius/flake-utils-plus/master";
+    sops-nix.url = "github:Mic92/sops-nix";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, fup, nixos-hardware, disko, sops-nix }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, fup, nixos-hardware, disko, sops-nix, home-manager }:
     fup.lib.mkFlake {
       inherit self inputs;
 
@@ -24,6 +29,13 @@
         modules = [
           disko.nixosModules.disko
           ./modules/default
+          sops-nix.nixosModules.sops
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.sebastian = import ./users/sebastian/home.nix;
+          }
         ];
         specialArgs = {
           hardwareModules = nixos-hardware.nixosModules;

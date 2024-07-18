@@ -58,7 +58,7 @@
         ./modules/3d-printing
         ./modules/printing
         ./modules/bluetooth
-      ]; 
+      ];
 
       hosts.ostara.modules = [
         ./hosts/ostara

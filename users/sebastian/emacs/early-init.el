@@ -8,7 +8,7 @@
       (normal-file-name-handler-alist file-name-handler-alist)
       (init-gc-cons-threshold most-positive-fixnum)
       (init-gc-cons-percentage 0.6))
-  (setq gc-cons-threshold init-gc-cons-threshold
+  (setq gc-cons-threshold init-gc-cons-thresholdx
         gc-cons-percentage init-gc-cons-percentage
         file-name-handler-alist nil)
   (add-hook 'after-init-hook

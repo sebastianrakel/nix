@@ -210,6 +210,8 @@
 
   services.fwupd.enable = true;
 
+  services.twingate.enable = true;
+
   services.udev.packages = [
     pkgs.android-udev-rules
   ];

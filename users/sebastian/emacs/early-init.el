@@ -8,7 +8,7 @@
       (normal-file-name-handler-alist file-name-handler-alist)
       (init-gc-cons-threshold most-positive-fixnum)
       (init-gc-cons-percentage 0.6))
-  (setq gc-cons-threshold init-gc-cons-thresholdx
+  (setq gc-cons-threshold init-gc-cons-threshold
         gc-cons-percentage init-gc-cons-percentage
         file-name-handler-alist nil)
   (add-hook 'after-init-hook
@@ -33,3 +33,7 @@
 (push '(drag-internal-border . t) default-frame-alist)
 
 (advice-add #'x-apply-session-resources :override #'ignore)
+
+(if (member (system-name) '("quarktasche" "sulu"))
+    (add-to-list 'default-frame-alist '(font . "MonaspaceNeonExtraLight-16"))
+  (add-to-list 'default-frame-alist '(font . "MonaspaceNeonExtraLight-14")))

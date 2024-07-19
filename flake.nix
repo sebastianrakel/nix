@@ -35,6 +35,12 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.sebastian = import ./users/sebastian/home.nix;
+            home-manager.extraSpecialArgs = {
+              unstable = import nixpkgs-unstable {
+                system = "x86_64-linux";
+                config.allowUnfree = true;
+              };
+            };
           }
         ];
         specialArgs = {

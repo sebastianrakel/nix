@@ -31,16 +31,35 @@ lib.mkIf (! config.display-manager.useWayland) {
     };
   };
 
-  services.xserver = {
-    windowManager.herbstluftwm = {
-      enable = true;
-      package = pkgs.herbstluftwm-git;
-    };
-    displayManager.startx.enable = true;
-    xkb.layout = "us";
-    xkb.variant = "altgr-intl";
-  };
+  services.xserver.displayManager.startx.enable = true;
+  services.xserver.displayManager.session = [{
+    manage = "window";
+    name = "home-manager";
+    start = ''
+      ${pkgs.runtimeShell} $HOME/.xsession-hm &
+      waitPID=$!
+    '';
+  }];
 
+  services.greetd.enable = true;
+  services.greetd = {
+    vt = config.services.xserver.tty;
+    settings = {
+      default_session = {
+        command =
+          let
+            dmcfg = config.services.displayManager;
+          in lib.concatStringsSep " " [
+          "${pkgs.greetd.tuigreet}/bin/tuigreet"
+          "--time --remember --remember-user-session --window-padding 1 --asterisks"
+          "--xsession-wrapper \"startx ${dmcfg.sessionData.wrapper}\""
+          "--xsessions ${dmcfg.sessionData.desktops}/share/xsessions"
+        ];
+        user = "greeter";
+      };
+    };
+  };
+  
   location.latitude = 52.49857143211573;
   location.longitude = 7.227237925464914;
   services.redshift = {

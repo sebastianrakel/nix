@@ -85,7 +85,7 @@
 	base16-theme-distinct-fringe-background nil)
 
   (add-to-list 'custom-theme-load-path "~/.base16-themes/emacs/")
-  (load-file "~/.emacs.d/personal/theme.el")
+  (load-file "~/.base-16/themes/emacs/base16-github-theme.el")
   (own/theme-load-last-theme)
 
   ;; Overwriting some face attributes, cause i like it

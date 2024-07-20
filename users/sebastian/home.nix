@@ -26,6 +26,7 @@
     ./emacs
     ./zsh
     ./git
+    ./eww
   ];
   
   home.stateVersion = "24.05";

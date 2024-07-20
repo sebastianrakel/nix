@@ -74,6 +74,9 @@
       herbstclient set_attr theme.style_override '.tab .content { padding: 4px; }'
       herbstclient detect_monitors
       source ${config.home.homeDirectory}/.config/herbstluftwm/theme.sh
+      feh --bg-fill "${config.home.homeDirectory}/Pictures/Wallpaper/gravity_falls_neon.jpg"
+      eww kill
+      eww open "$(hostname)"
     '';
   };
   

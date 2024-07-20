@@ -1,23 +1,23 @@
 #!/usr/bin/env sh
 
-# Github
+# Default Dark
 
-hlwm_base00='#ffffff'
-hlwm_base01='#f5f5f5'
-hlwm_base02='#c8c8fa'
-hlwm_base03='#969896'
-hlwm_base04='#e8e8e8'
-hlwm_base05='#333333'
-hlwm_base06='#ffffff'
-hlwm_base07='#ffffff'
-hlwm_base08='#ed6a43'
-hlwm_base09='#0086b3'
-hlwm_base0A='#795da3'
-hlwm_base0B='#183691'
-hlwm_base0C='#183691'
-hlwm_base0D='#795da3'
-hlwm_base0E='#a71d5d'
-hlwm_base0F='#333333'
+hlwm_base00='#181818'
+hlwm_base01='#282828'
+hlwm_base02='#383838'
+hlwm_base03='#585858'
+hlwm_base04='#b8b8b8'
+hlwm_base05='#d8d8d8'
+hlwm_base06='#e8e8e8'
+hlwm_base07='#f8f8f8'
+hlwm_base08='#ab4642'
+hlwm_base09='#dc9656'
+hlwm_base0A='#f7ca88'
+hlwm_base0B='#a1b56c'
+hlwm_base0C='#86c1b9'
+hlwm_base0D='#7cafc2'
+hlwm_base0E='#ba8baf'
+hlwm_base0F='#a16946'
 
 herbstclient chain , \
 	, attr theme.color                        "${hlwm_base07}" \

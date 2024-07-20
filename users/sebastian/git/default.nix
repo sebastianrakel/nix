@@ -4,8 +4,10 @@
     enable = true;
     userName = "Sebastian Rakel";
     userEmail = "sebastian@devunit.eu";
-    signByDefault = true;
-    key = "779EBA5EB9D631B8";
+    signing = {
+      signByDefault = true;
+      key = "779EBA5EB9D631B8";
+    };
     aliases = {
       co = "checkout";
       ci = "commit";
@@ -29,6 +31,6 @@
       a = "add";
       fat = "fetch --all --tags";
       nb = "con";
-    }
+    };
   };
 }

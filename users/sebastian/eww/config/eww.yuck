@@ -1,0 +1,171 @@
+(deflisten workspace_0 "scripts/hlwm.pl")
+(defpoll battery :interval "1m" "scripts/battery.pl BAT1")
+(defpoll time :interval "10s" "date '+%H:%M %b %d, %Y'")
+(defpoll memory :interval "15s" "scripts/memory.sh")
+(defpoll network :interval "5s" "scripts/network.pl")
+(defpoll audio :interval "2s" "scripts/audio.pl")
+
+(defwidget stat-module [icon]
+	   (box :class "stat-module"
+		:orientation "h"
+		:halign "end"
+		:space-evenly false
+		:visible true
+	   (label :class "stat-module-icon" :text "${icon}")
+	   (children)))
+
+(defwidget cpu []
+  (stat-module :icon ""
+	       (label :text "${round(EWW_CPU.avg, 0)}%")))
+
+(defwidget cpu_temp []
+  (stat-module :icon " "
+	       (label :text "${round(EWW_TEMPS.K10TEMP_TCTL, 2)}C")))
+
+(defwidget nvme_temp []
+  (stat-module :icon " "
+    (label :text "${round(EWW_TEMPS.NVME_COMPOSITE_WD_BLACK_SN850X_2000GB_TEMP1, 2)}C")))
+
+(defwidget stats []
+	   (box :orientation "h"
+		:space-evenly false
+		:halign "start"
+		:spacing 15
+		:class "stats"
+		(cpu)
+		(cpu_temp)
+		(nvme_temp)))
+
+(defwidget bat []
+	   (button :class "info-button"
+		   :tooltip "${ EWW_BATTERY['BAT1'].capacity }% remaining"
+		   battery))
+
+(defwidget clock []
+  (box :orientation "h"
+       :space-evenly false
+       :halign "end"
+       :class "clock"
+       (eventbox :onhover "eww update show_date_full=true"
+  		 :onhoverlost "eww update show_date_full=false"
+		 (box
+		  :spacing "0"
+		  :orientation "h"
+		  :space-evenly false
+		  :halign "end"
+		  (revealer :transition "slideleft"
+			    :reveal show_date_full
+			    :duration "550ms"
+			    (label :text {formattime(EWW_TIME, "%Y-%m-%d ")}))
+		  (label :text {formattime(EWW_TIME, "%H:%M")})))))
+
+(defvar show_date_full false)
+
+(defwidget left []
+	   (box :orientation "h"
+		:space-evenly false
+		:halign "start"
+		:spacing 15
+		:class "left"
+		(box :class "info"
+		     (net_button)
+		     (audio_button)
+		     (children))))
+
+(defwidget right []
+	   (box :orientation "h"
+		:space-evenly false
+		:halign "end"
+		:spacing 15
+		:class "right"
+		(stats)
+		(clock)
+		(systray)))
+
+(defwidget workspaces []
+  (box :class "workspaces"
+       :orientation "h"
+       :space-evenly true
+       :halign "start"
+       :spacing 10
+       (hlwm)))
+
+(defwidget hlwm []
+	   (literal :content workspace_0))
+
+(defwidget net_button []
+	   (button :class "info-button" :onclick "scripts/popup.sh network" "󰈀"))
+
+(defwidget audio_button []
+	   (button :class "info-button" :onclick "scripts/popup.sh audio" ""))
+
+(defwidget net []
+	   (literal :content network))
+
+(defwidget audio_popup []
+	   (literal :content audio))
+
+(defwindow odin
+	   :monitor 0
+	   :windowtype "dock"
+	   :exclusive true
+	   :geometry (geometry :x "0%"
+			       :width "100%"
+			       :anchor "top center")
+	   :reserve (struts :side "top" :distance "40px")
+	   (centerbox :class "bar"
+		      :orientation "h"
+		      (left)
+		      (workspaces)
+		      (right)))
+(defwindow quarktasche
+	   :monitor 0
+	   :windowtype "dock"
+	   :exclusive true
+	   :geometry (geometry :x "0%"
+			       :width "100%"
+			       :anchor "top center")
+	   :reserve (struts :side "top" :distance "40px")
+	   (centerbox :class "bar"
+		      :orientation "h"
+		      (left)
+		      (workspaces)
+		      (right)))
+
+(defwindow ostara
+	   :monitor 0
+	   :windowtype "dock"
+	   :geometry (geometry :x "0%"
+			       :width "100%"
+			       :anchor "top center")
+	   :reserve (struts :side "top" :distance "40px")
+	   (centerbox :class "bar"
+		      :orientation "h"
+		      (left (bat))
+		      (workspaces)
+		      (right)))
+
+(defwindow sulu
+	   :monitor 0
+	   :windowtype "dock"
+	   :geometry (geometry :x "0%"
+			       :width "100%"
+			       :anchor "top center")
+	   :reserve (struts :side "top" :distance "40px")
+	   (centerbox :class "bar"
+		      :orientation "h"
+		      (left)
+		      (workspaces)
+		      (right)))
+
+(defwindow network
+	   :geometry (geometry :x "5px" 
+			       :y "45px"
+			       :anchor "top left")
+	   (box :class "popup" (net)))
+
+(defwindow audio
+	   :geometry (geometry :x "40px" 
+			       :y "45px"
+			       :anchor "top left")
+	   (box :class "popup" (audio_popup)))

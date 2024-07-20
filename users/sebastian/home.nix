@@ -3,12 +3,6 @@
   home.username = "sebastian";
   xsession.enable = true;
  
-  programs.git = {
-    enable = true;
-    userName = "Sebastian Rakel";
-    userEmail = "sebastian@devunit.eu";
-  };
-
   home.packages = with pkgs; [
     fzf
     rink
@@ -31,6 +25,7 @@
     ./herbstluftwm
     ./emacs
     ./zsh
+    ./git
   ];
   
   home.stateVersion = "24.05";

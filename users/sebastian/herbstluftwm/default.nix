@@ -30,6 +30,14 @@
       Mod4-c             = "cycle";
       Mod4-f             = "fullscreen toggle";
       Mod4-r             = "remove";
+      Mod4-1             = "use_index 0";
+      Mod4-Shift-1       = "move_index 0";
+      Mod4-2             = "use_index 1";
+      Mod4-Shift-2       = "move_index 1";
+      Mod4-3             = "use_index 2";
+      Mod4-Shift-3       = "move_index 2";
+      Mod4-4             = "use_index 3";
+      Mod4-Shift-4       = "move_index 3";
     };
     mousebinds = {
       Mod4-Button1 = "move";

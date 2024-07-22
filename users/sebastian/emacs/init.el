@@ -30,6 +30,11 @@
   (setopt use-short-answers t)
   (windmove-default-keybindings 'meta)
   (electric-pair-mode 1)
+
+  ;; Backup Files
+  (setq backup-directory-alist `((".*" . ,temporary-file-directory))
+	auto-save-file-name-transforms `((".*" ,temporary-file-directory t))
+	create-lockfiles nil)
   
   (defun own/treesit-install-langs()
     (interactive)
@@ -101,6 +106,10 @@
   (doom-modeline-project-detection 'truncate-with-project)
   (doom-modeline-icon t))
 
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook))
+
 (use-package projectile
   :bind-keymap
   (("C-c p" . projectile-command-map))
@@ -121,7 +130,8 @@
 
 (use-package consult
   :bind
-  (("C-c b" . consult-buffer)))
+  (("C-c b" . consult-buffer)
+   ("C-s" . consult-line)))
 
 (use-package consult-eglot
   :after consult

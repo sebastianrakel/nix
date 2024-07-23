@@ -35,7 +35,6 @@
   environment.systemPackages = with pkgs; [
     dbus
     alacritty
-    rofi
     gopass
     gopass-jsonapi
     pinentry-gnome3

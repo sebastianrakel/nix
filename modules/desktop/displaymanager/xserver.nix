@@ -4,7 +4,6 @@ lib.mkIf (! config.display-manager.useWayland) {
     feh
     xscreensaver
     xclip
-    unstable.eww
   ];
 
   services.gnome.gnome-keyring.enable = true;
@@ -29,6 +28,11 @@ lib.mkIf (! config.display-manager.useWayland) {
       DISPLAY = ":0";
         XAUTHORITY = "/home/sebastian/.Xauthority";
     };
+  };
+
+  services.xserver.xkb = {
+    layout  = "us";
+    variant = "intl";
   };
 
   services.xserver.displayManager.startx.enable = true;

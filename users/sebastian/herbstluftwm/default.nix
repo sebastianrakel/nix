@@ -7,7 +7,7 @@
       Mod4-Shift-r       = "reload";
       Mod4-Shift-q       = "close";
       Mod4-t             = "spawn rofi -show theme -modes \"theme:\${HOME}/.config/rofi/modes/theme.sh\"";
-      Mod4-Shift-E       = "spawn rofi -show pw -modes \"pw:\${HOME}/.config/rofi/modes/power.sh\"";
+      Mod4-Shift-e       = "spawn rofi -show pw -modes 'pw:${config.home.homeDirectory}/.local/bin/rofi_power.sh'";
       Mod4-Return        = "spawn \${TERMINAL:-XTERM}";
       Mod4-d             = "spawn rofi -show combi -combi-modi drun,run -show-icons";
       Mod4-w             = "spawn rofi -show window -window-command 'herbstclient bring {window}'";

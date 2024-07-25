@@ -1,12 +1,14 @@
-{ config, pkgs, unstable, ... }:
+{ config, pkgs, unstable, nur, ... }:
 {
   home.username = "sebastian";
   xsession.enable = true;
- 
+
   home.packages = with pkgs; [
     fzf
     rink
     monaspace
+    nur.fb-client
+    nur.workspace-switcher
   ];
 
   home.sessionVariables = {
@@ -16,14 +18,15 @@
   };
 
   imports = [
+    ./zsh
     ./alacritty
     ./rofi
     ./herbstluftwm
     ./emacs
-    ./zsh
     ./git
     ./eww
     ./modules/development/go
+    ./modules/development/embedded
   ];
   
   home.stateVersion = "24.05";

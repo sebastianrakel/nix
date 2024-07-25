@@ -32,7 +32,7 @@ lib.mkIf (! config.display-manager.useWayland) {
 
   services.xserver.xkb = {
     layout  = "us";
-    variant = "intl";
+    variant = "altgr-intl";
   };
 
   services.xserver.displayManager.startx.enable = true;

@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nurpkgs.url = "github:sebastianrakel/nur/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     fup.url = "github:gytis-ivaskevicius/flake-utils-plus/master";
     sops-nix.url = "github:Mic92/sops-nix";
@@ -17,7 +18,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, fup, nixos-hardware, disko, sops-nix, home-manager }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nurpkgs, fup, nixos-hardware, disko, sops-nix, home-manager }:
     fup.lib.mkFlake {
       inherit self inputs;
 
@@ -40,6 +41,7 @@
                 system = "x86_64-linux";
                 config.allowUnfree = true;
               };
+              nur = nurpkgs.packages."x86_64-linux";
             };
           }
         ];
@@ -50,6 +52,7 @@
             system = "x86_64-linux";
             config.allowUnfree = true;
           };
+          nur = nurpkgs.packages."x86_64-linux";
         };
       };
 

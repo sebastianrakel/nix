@@ -36,4 +36,4 @@
 
 (if (member (system-name) '("quarktasche" "sulu"))
     (add-to-list 'default-frame-alist '(font . "MonaspaceNeonExtraLight-16"))
-  (add-to-list 'default-frame-alist '(font . "MonaspaceNeonExtraLight-14")))
+  (add-to-list 'default-frame-alist '(font . "MonaspaceNeonExtraLight-12")))

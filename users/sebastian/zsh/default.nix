@@ -32,6 +32,7 @@
       tmux = "tmux -2";
       "_" = "sudo ";
       sc = "systemctl";
+      reload = "unset __HM_SESS_VARS_SOURCED; source .zshenv";
     };
 
     history = {

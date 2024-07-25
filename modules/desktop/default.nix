@@ -19,7 +19,6 @@
   programs.dconf.enable = true;
 
   nixpkgs.overlays = [
-    (final: prev: import ../../packages { pkgs = final; })
     (final: prev: { weechat = prev.weechat.override { configure = { availablePlugins, ... }: {
                       plugins = builtins.attrValues (availablePlugins // {
                         python = availablePlugins.python.withPackages (ps: with ps; [ requests ]);
@@ -74,8 +73,6 @@
     android-tools
     gh
     kdiff3
-    workspace-switcher
-    fb-client
     dunst
     mpv
     nodejs_18

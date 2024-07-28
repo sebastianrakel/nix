@@ -67,7 +67,7 @@ lib.mkIf (! config.display-manager.useWayland) {
   location.latitude = 52.49857143211573;
   location.longitude = 7.227237925464914;
   services.redshift = {
-    enable = true;
+    enable = false;
     temperature = {
       day = 5500;
       night = 3700;

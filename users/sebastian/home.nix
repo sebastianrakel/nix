@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, nur, ... }:
+{ utils, config, pkgs, unstable, nur, ... }:
 {
   home.username = "sebastian";
   xsession.enable = true;
@@ -19,7 +19,6 @@
 
   imports = [
     ./zsh
-    ./alacritty
     ./rofi
     ./herbstluftwm
     ./emacs
@@ -27,7 +26,10 @@
     ./eww
     ./modules/development/go
     ./modules/development/embedded
+    ./modules/alacritty
   ];
+
+  alacritty.enable = true;
   
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;

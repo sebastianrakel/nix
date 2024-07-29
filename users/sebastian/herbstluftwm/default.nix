@@ -8,9 +8,10 @@
       Mod4-Shift-q       = "close";
       Mod4-t             = "spawn rofi -show theme -modes \"theme:\${HOME}/.config/rofi/modes/theme.sh\"";
       Mod4-Shift-e       = "spawn rofi -show pw -modes 'pw:${config.home.homeDirectory}/.local/bin/rofi_power.sh'";
+      Mod4-Shift-s       = "spawn flameshot gui";
       Mod4-Return        = "spawn \${TERMINAL:-XTERM}";
       Mod4-d             = "spawn rofi -show combi -combi-modi drun,run -show-icons";
-      Mod4-w             = "spawn rofi -show window -window-command 'herbstclient bring {window}'";
+      Mod4-w             = "spawn rofi -show window -window-command 'herbstclient bring {windowy}'";
       Mod4-o             = "split right";
       Mod4-u             = "split bottom";
       Mod4-p             = "spawn workspace-switcher rofi";

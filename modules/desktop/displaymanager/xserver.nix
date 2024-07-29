@@ -2,13 +2,14 @@
 lib.mkIf (! config.display-manager.useWayland) {
   environment.systemPackages = with pkgs; [
     feh
-    xscreensaver
     xclip
+    xscreensaver
   ];
 
   services.gnome.gnome-keyring.enable = true;
   programs.seahorse.enable = true;
 
+  services.xscreensaver.enable = true;
   systemd.user.services.xscreensaver-suspend = {
     restartIfChanged = false;
     unitConfig = {

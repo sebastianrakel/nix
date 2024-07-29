@@ -73,7 +73,5 @@
     };
   };
 
-  services.twingate.enable = true;
-
   system.stateVersion = "23.11";
 }

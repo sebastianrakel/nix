@@ -10,6 +10,10 @@
       fpath+=(${pkgs.pure-prompt}/share/zsh/site-functions)
       autoload -U promptinit; promptinit
       prompt pure
+
+      if [[ -e "${config.home.homeDirectory}/.zsh-private" ]]; then
+        for config_file in ${config.home.homeDirectory}/.zsh-private/*.zsh; do source $config_file; done
+      fi
     '';
 
     profileExtra = ''
@@ -17,6 +21,10 @@
         exec startx
       fi
     '';
+
+    envExtra = ''
+      if [ -f "${config.home.homeDirectory}/.zshenv.private" ]; then source "${config.home.homeDirectory}/.zshenv.private"; fi
+    ''; 
 
     shellAliases = {
       ll = "ls -l";
@@ -32,7 +40,7 @@
       tmux = "tmux -2";
       "_" = "sudo ";
       sc = "systemctl";
-      reload = "unset __HM_SESS_VARS_SOURCED; source .zshenv";
+      reload = "unset __HM_SESS_VARS_SOURCED; source ${config.home.homeDirectory}/.zshenv";
     };
 
     history = {

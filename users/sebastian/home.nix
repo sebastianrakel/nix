@@ -1,5 +1,17 @@
-{ utils, config, pkgs, unstable, nur, ... }:
+{ lib, utils, osConfig, config, pkgs, unstable, nur, ... }:
 {
+  imports = [
+    ./zsh
+    ./rofi
+    ./herbstluftwm
+    ./emacs
+    ./git
+    ./eww
+    ./modules/development/go
+    ./modules/development/embedded
+    ./modules/alacritty
+  ] ++ lib.optional (builtins.pathExists ./configurations/${osConfig.networking.hostName}) ./configurations/${osConfig.networking.hostName};
+  
   home.username = "sebastian";
   xsession.enable = true;
 
@@ -16,19 +28,7 @@
       VAGRANT_DEFAULT_PROVIDER    = "libvirt";
       QT_AUTO_SCREEN_SCALE_FACTOR = 0;
   };
-
-  imports = [
-    ./zsh
-    ./rofi
-    ./herbstluftwm
-    ./emacs
-    ./git
-    ./eww
-    ./modules/development/go
-    ./modules/development/embedded
-    ./modules/alacritty
-  ];
-
+  
   alacritty.enable = true;
   
   home.stateVersion = "24.05";

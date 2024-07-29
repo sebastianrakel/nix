@@ -11,6 +11,11 @@
       autoload -U promptinit; promptinit
       prompt pure
 
+      # base16-shell
+      base16_shell_theme_script=${config.themes.base16.shell}
+      [ -n "$PS1" ] && [ -s $base16_shell_theme_script ] && . $base16_shell_theme_script
+      unset base16_shell_theme_script
+
       if [[ -e "${config.home.homeDirectory}/.zsh-private" ]]; then
         for config_file in ${config.home.homeDirectory}/.zsh-private/*.zsh; do source $config_file; done
       fi

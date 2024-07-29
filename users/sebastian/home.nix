@@ -10,6 +10,7 @@
     ./modules/development/go
     ./modules/development/embedded
     ./modules/alacritty
+    ./themes
   ] ++ lib.optional (builtins.pathExists ./configurations/${osConfig.networking.hostName}) ./configurations/${osConfig.networking.hostName};
   
   home.username = "sebastian";
@@ -28,6 +29,8 @@
       VAGRANT_DEFAULT_PROVIDER    = "libvirt";
       QT_AUTO_SCREEN_SCALE_FACTOR = 0;
   };
+
+  themes.base16 = "github";
   
   alacritty.enable = true;
   

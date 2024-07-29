@@ -16,9 +16,10 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    theming.url = "github:sebastianrakel/nixos-theming";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nurpkgs, fup, nixos-hardware, disko, sops-nix, home-manager }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nurpkgs, fup, nixos-hardware, disko, sops-nix, home-manager, theming }:
     fup.lib.mkFlake {
       inherit self inputs;
 
@@ -42,6 +43,7 @@
                 config.allowUnfree = true;
               };
               nur = nurpkgs.packages."x86_64-linux";
+              theming = theming;
             };
           }
         ];

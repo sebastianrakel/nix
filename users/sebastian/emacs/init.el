@@ -89,7 +89,7 @@
   (setq base16-theme-256-color-source "colors"
 	base16-theme-distinct-fringe-background nil)
 
-  (add-to-list 'custom-theme-load-path "~/.base16-themes/emacs/")
+  ;;(add-to-list 'custom-theme-load-path "~/.base16-themes/emacs/")
   (load-file "~/.emacs.d/theme.el")
 
   ;; Overwriting some face attributes, cause i like it

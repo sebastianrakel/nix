@@ -341,11 +341,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1722334542,
-        "narHash": "sha256-RpYt+Qv/bixuVaRJBuDeiIlGqsgdQbqS7FWkSvZkjn0=",
+        "lastModified": 1722344535,
+        "narHash": "sha256-TahTsPyGpk4Unopu3wU5MRwBgNr33Hr+4UhmTBEzhYg=",
         "owner": "sebastianrakel",
         "repo": "nixos-theming",
-        "rev": "ba670e74e4b88a06a31501cecffa4c9abb84af0f",
+        "rev": "35d4d662ed40b7d969c3121a445f87ecd6d0c2a3",
         "type": "github"
       },
       "original": {

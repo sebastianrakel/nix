@@ -23,8 +23,15 @@
   (straight-use-package-by-default t))
 
 (use-package emacs
+  :bind
+  ("C-c r" . 'own/emacs-reload-config)
+  ("C-<tab>" . 'complete-at-point)
   :hook
   ((prog-mode . display-line-numbers-mode))
+  :init
+  (defun own/emacs-reload-config()
+    (interactive)
+    (load-file "~/.emacs.d/init.el"))
   :config
   (set-default 'truncate-lines t)
   (setopt use-short-answers t)
@@ -87,9 +94,9 @@
     (own/theme-load-last-theme))
 
   (setq base16-theme-256-color-source "colors"
-	base16-theme-distinct-fringe-background nil)
-
-  (load-file "~/.emacs.d/theme.el")
+	base16-theme-distinct-fringe-background nil
+	custom-theme-directory "~/.emacs.d/themes/")
+  
   (load-file "~/.emacs.d/selected-theme.el")
 
   (own/theme-load-last-theme)
@@ -114,6 +121,8 @@
   (dashboard-setup-startup-hook))
 
 (use-package projectile
+  :bind
+  ("C-c R" . own/projectile-reload-projects)
   :bind-keymap
   (("C-c p" . projectile-command-map))
   :custom
@@ -297,7 +306,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("664111db1521fe3351061dc87aea95fa98b3f244f4b830fbc048d39c3a8bc125" default)))
+   '("855b8dee99b96b726a57790eb904544c623cb39caa0846c8afc008d6ee48aec1" "664111db1521fe3351061dc87aea95fa98b3f244f4b830fbc048d39c3a8bc125" default)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

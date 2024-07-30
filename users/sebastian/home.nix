@@ -31,7 +31,7 @@
       QT_AUTO_SCREEN_SCALE_FACTOR = 0;
   };
 
-  themes.base16 = "nord";
+  themes.base16 = "harmonic-light";
   
   alacritty.enable = true;
   herbstluftwm.enable = true;

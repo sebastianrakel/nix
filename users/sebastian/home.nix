@@ -33,6 +33,8 @@
   themes.base16 = "github";
   
   alacritty.enable = true;
+  herbstluftwm.enable = true;
+  herbstluftwm.wallpaper = "nasa_cloud.jpg";
   
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;

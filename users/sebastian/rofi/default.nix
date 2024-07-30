@@ -1,8 +1,9 @@
 { config, pkgs, unstable, ... }:
 {
-  home.packages = with pkgs; [
-    rofi 
-  ];
+  programs.rofi = {
+    enable = true;
+    theme  = config.themes.base16.rofi;
+  }; 
   
   home.file."rofi_power" = {
     source     = ./rofi_power.sh;

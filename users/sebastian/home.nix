@@ -10,6 +10,7 @@
     ./modules/development/go
     ./modules/development/embedded
     ./modules/alacritty
+    ./direnv
     ./themes
   ] ++ lib.optional (builtins.pathExists ./configurations/${osConfig.networking.hostName}) ./configurations/${osConfig.networking.hostName};
   
@@ -30,11 +31,11 @@
       QT_AUTO_SCREEN_SCALE_FACTOR = 0;
   };
 
-  themes.base16 = "github";
+  themes.base16 = "nord";
   
   alacritty.enable = true;
   herbstluftwm.enable = true;
-  herbstluftwm.wallpaper = "nasa_cloud.jpg";
+  herbstluftwm.wallpaper = "emacs.png";
   
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;

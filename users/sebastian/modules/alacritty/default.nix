@@ -14,10 +14,7 @@ in {
 
   config = mkIf cfg.enable {
     home.file."alacritty_theme" = {
-      source = builtins.fetchurl {
-        url = "https://raw.githubusercontent.com/aarowill/base16-alacritty/master/colors/base16-harmonic16-light.toml";
-        sha256 = "1w3ldl0scy7rmq8qp3bc223ygh4z3nnd668g9q84sl7nraj611fy";
-      };
+      source = config.themes.base16.alacritty;
       target = ".config/alacritty/theme.toml";
     };
     

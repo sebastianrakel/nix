@@ -39,7 +39,6 @@
     pinentry-gnome3
     mosh
     tdesktop
-    direnv
     unstable.vscode
     chromium
     thunderbird
@@ -99,7 +98,6 @@
     platformio
     ccls
     unstable.go
-    unstable.emacs29
     unstable.jetbrains.idea-ultimate
     unstable.jetbrains.datagrip
     unstable.jetbrains.rider

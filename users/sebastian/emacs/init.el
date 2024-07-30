@@ -89,8 +89,10 @@
   (setq base16-theme-256-color-source "colors"
 	base16-theme-distinct-fringe-background nil)
 
-  ;;(add-to-list 'custom-theme-load-path "~/.base16-themes/emacs/")
   (load-file "~/.emacs.d/theme.el")
+  (load-file "~/.emacs.d/selected-theme.el")
+
+  (own/theme-load-last-theme)
 
   ;; Overwriting some face attributes, cause i like it
   (with-eval-after-load 'org-faces
@@ -108,6 +110,7 @@
 
 (use-package dashboard
   :config
+  (setq recentf-exclude '("~/Nextcloud/Documents/Todos/"))
   (dashboard-setup-startup-hook))
 
 (use-package projectile
@@ -215,7 +218,6 @@
   (highlight-indent-guides-responsive 'top))
 
 (use-package editorconfig
-  :ensure t
   :config
   (editorconfig-mode 1))
 
@@ -289,3 +291,16 @@
 (use-package yaml-mode)
 (use-package hcl-mode)
 (use-package powershell)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("664111db1521fe3351061dc87aea95fa98b3f244f4b830fbc048d39c3a8bc125" default)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

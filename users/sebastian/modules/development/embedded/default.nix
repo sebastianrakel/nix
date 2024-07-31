@@ -1,7 +1,7 @@
 { config, pkgs, unstable, ... }:
-{
+{ 
   home.packages = with pkgs; [
-    unstable.pico-sdk
+    (unstable.pico-sdk.override { withSubmodules = true; })
     unstable.picotool
     unstable.platformio-core
     unstable.cmake

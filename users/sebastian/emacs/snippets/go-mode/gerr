@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: GIN Return Error
+# key: gerr
+# --
+if err != nil {
+   c.AbortWithStatusJSON(http.$1, NewErrorResponse(err))
+   return
+}

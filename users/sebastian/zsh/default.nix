@@ -5,6 +5,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    defaultKeymap = "emacs";
 
     initExtra = ''
       fpath+=(${pkgs.pure-prompt}/share/zsh/site-functions)
@@ -31,9 +32,10 @@
       if [ -f "${config.home.homeDirectory}/.zshenv.private" ]; then source "${config.home.homeDirectory}/.zshenv.private"; fi
     ''; 
 
+    # TODO: use nix location here to
     shellAliases = {
       ll = "ls -l";
-      nupdate = "cd ~/.nix && sudo nixos-rebuild switch --upgrade --flake .#$(hostname)";
+      nupdate = "current=$(pwd); cd ~/.nix; sudo nixos-rebuild switch --upgrade --flake .#$(hostname); cd $current";
       dd = "dd status=progress";
       ddd = "dd oflag=direct status=progress";
       ddf = "dd conv=fsynci status=progress";

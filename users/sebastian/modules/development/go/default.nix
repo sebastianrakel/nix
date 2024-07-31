@@ -5,6 +5,7 @@
     unstable.gdlv
     unstable.gopls
     unstable.go
+    unstable.air
   ];
 
   home.sessionVariables = {

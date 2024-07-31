@@ -32,5 +32,10 @@
       fat = "fetch --all --tags";
       nb = "con";
     };
+    includes = [
+      {
+        path = "${config.home.homeDirectory}/.config/git/conf.d/private";
+      }
+    ];
   };
 }

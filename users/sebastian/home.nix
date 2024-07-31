@@ -12,6 +12,7 @@
     ./modules/alacritty
     ./direnv
     ./themes
+    ./tmux
   ] ++ lib.optional (builtins.pathExists ./configurations/${osConfig.networking.hostName}) ./configurations/${osConfig.networking.hostName};
   
   home.username = "sebastian";

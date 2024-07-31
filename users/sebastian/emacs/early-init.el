@@ -35,5 +35,5 @@
 (advice-add #'x-apply-session-resources :override #'ignore)
 
 (if (member (system-name) '("quarktasche" "sulu"))
-    (add-to-list 'default-frame-alist '(font . "MonaspaceNeonExtraLight-16"))
-  (add-to-list 'default-frame-alist '(font . "MonaspaceNeonExtraLight-12")))
+    (add-to-list 'default-frame-alist '(font . "MonaspaceNeon-16"))
+  (add-to-list 'default-frame-alist '(font . "MonaspaceNeon-12")))

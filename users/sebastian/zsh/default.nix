@@ -45,6 +45,7 @@
       tmux = "tmux -2";
       "_" = "sudo ";
       reload = "unset __HM_SESS_VARS_SOURCED; source ${config.home.homeDirectory}/.zshenv";
+      vm-destroy = "for vm in $(virsh list --name --state-running); do virsh destroy $vm; done";
     };
 
     history = {

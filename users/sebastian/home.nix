@@ -29,6 +29,7 @@
       BROWSER                     = "firefox";
       VAGRANT_DEFAULT_PROVIDER    = "libvirt";
       QT_AUTO_SCREEN_SCALE_FACTOR = 0;
+      LIBVIRT_DEFAULT_URI         = "qemu:///system";
   };
 
   themes.base16 = "harmonic-light";

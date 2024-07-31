@@ -20,6 +20,11 @@
       if [[ -e "${config.home.homeDirectory}/.zsh-private" ]]; then
         for config_file in ${config.home.homeDirectory}/.zsh-private/*.zsh; do source $config_file; done
       fi
+
+      # keybindings
+
+      bindkey '^[[1;5C' emacs-forward-word
+      bindkey '^[^[[D' emacs-backward-word
     '';
 
     profileExtra = ''

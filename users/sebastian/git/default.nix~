@@ -1,8 +1,0 @@
-{ config, pkgs, unstable, ... }:
-{
-  programs.git = {
-    enable = true;
-    userName = "Sebastian Rakel";
-    userEmail = "sebastian@devunit.eu";
-  };
-}

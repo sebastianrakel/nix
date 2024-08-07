@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: request handler error with 404 check
+# key: 4rr
+# --
+if err != nil {
+   if err == $1 {
+       rh.ReturnNotFound(err)
+       return
+   }
+   
+   rh.HasError(err)
+   return
+ }

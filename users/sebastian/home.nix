@@ -10,6 +10,7 @@
     ./modules/development/go
     ./modules/development/embedded
     ./modules/alacritty
+    ./modules/gaming
     ./direnv
     ./themes
     ./tmux

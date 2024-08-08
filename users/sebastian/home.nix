@@ -32,8 +32,6 @@
       QT_AUTO_SCREEN_SCALE_FACTOR = 0;
       LIBVIRT_DEFAULT_URI         = "qemu:///system";
   };
-
-  themes.base16 = "harmonic-light";
   
   alacritty.enable = true;
   herbstluftwm.enable = true;
